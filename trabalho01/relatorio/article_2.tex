@@ -191,7 +191,36 @@ As imagens de entrada utilizadas nos testes do algoritmo foram retiradas da pág
 
 %------------------------------------------------
 
-\section{Código e Definições}
+\section{Dependências e Códigos}
+
+As bibliotecas utilizadas neste trabalho foram:
+
+\begin{table}[H]
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Biblioteca} & \textbf{Versão} \\ \hline
+numpy               & 1.16.2          \\ \hline
+cv2                 & 3.4.2           \\ \hline
+matplotlib          & 3.0.3           \\ \hline
+skimage             & 0.15.0          \\ \hline
+scipy               & 1.2.1           \\ \hline
+warnings            & 2.1             \\ \hline
+\end{tabular}
+\end{table}
+
+A leitura das imagens foi realizada utilizando uma função do \textbf{opencv} \cite{b1} chamada \textbf{imread()}, a qual necessitou de uma constante do próprio \textbf{opencv} para que a imagem ficassem apenas com o canal de escala de cinza, essa constante é denominada \textbf{IMREAD\_GRAYSCALE}.
+
+Os filtros foram gerados manualmente através da função \textbf{numpy.array()}. A função para gerar o preenchimento de borda presente no código utiliza uma função pronta do \textbf{opencv} denominada \textbf{copyMakeBorder()}, a qual preenche na largura a na altura a imagem com valor de \textit{pixel} 0.
+
+A função de convolução 2D foi criada manualmente, mas antes de acontecer as multiplicações e somas, o filtro sofre uma rotação de $180^{\circ}$ utilizando a função \textbf{numpy.rot90()} duas vezes. Para plotar os resultados utilizamos a biblioteca \textbf{matplotlib}.
+
+Para o cálculo da última questão da \textbf{seção 1.1}, foi necessário transformar a saída da aplicação do filtro $h_{3}$ e $h_{4}$ em inteiros de 32 \textit{bits}, pois na expressão $\sqrt{(h_{3})^{2} + (h_{4}})^{2}$ pode haver um estouro de inteiro, por conta de estar representado, inicialmente, por inteiros de 8 \textit{bits}.
+
+Na \textbf{seção 1.2} são utilizadas as funções \textbf{cv2.dft()} e \textbf{cv2.idft()} para transformação de Fourier e transformação inversa de Fourier, respectivamente. Após levar a imagem para o domínio de frequência é necessário transladar a componente de frequência zero para o centro da imagem, para isso é utilizado a função \textbf{numpyp.fft.fftshift()} e, para ter essa operação inversa, é utilizado a função \textbf{numpy.fft.ifftshift()}.
+
+%------------------------------------------------
+
+\section{Fundamentação}
 
 \subsection{Preenchimento de borda}
 
@@ -300,11 +329,109 @@ As variações de sigma utilizados neste trabalho foram: $\sigma = \left[2,4,8,1
 
 Os imagens resultantes da seção \textbf{1.1} e \textbf{1.2} foram salvas dentro da pasta \textbf{resultados/} utilizando uma função da biblioteca \textbf{matplotlib} chamada \textbf{matplotlib.pyplot.imsave()} \cite{b3}.
 
-O formato dos nomes de saída estão da seguinte forma: para a seção \textbf{1.1} o padrão é o nome da imagem de entrada (\textit{baboon} ou \textit{butterfly}) concatenado com o nome do filtro aplicado sobre ela; na seção \textbf{1.2} 
+O formato dos nomes de saída estão da seguinte forma: para a seção \textbf{1.1} o padrão é o nome da imagem de entrada (\textit{baboon} ou \textit{butterfly}) concatenado com o nome do filtro aplicado sobre ela; na seção \textbf{1.2} são geradas 4 imagens principais resultantes para cada valor de sigma atribuído na função de criar um filtro gaussiano.
 
 %------------------------------------------------
 
-\section{Resultados}
+\section{Resultados e Discuções}
+
+Os resultados obtidos na execução dos códigos da \textbf{seção 1.1} estão a seguir:
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/baboon_h1.png}
+	\includegraphics[scale=.19]{figures/butterfly_h1.png}
+\caption{Resultado da aplicação do filtro $h_{1}$.} \label{gdimotes}
+\end{center}
+\end{figure}
+
+Como já dito, o filtro $h_{1}$ é do tipo passa-alta, o qual atenua o valor central da máscara considerada na imagem. Como resultado da passagem desse filtros nas imagens de entrada, podemos observar que os \textit{pixels} de maior intensidade na imagem original foram intensificados, e os \textit{pixels} de menor intensidade tiveram seus valores reduzidos.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/baboon_h2.png}
+	\includegraphics[scale=.19]{figures/butterfly_h2.png}
+\caption{Resultado da aplicação do filtro $h_{2}$.} \label{gdimotes}
+\end{center}
+\end{figure}
+
+O filtro $h_{2}$ é do tipo passa-baixa, pois é baseado em uma distribuição estatística, nesse caso, a média. O resultado obtido pela convolução do filtro $h_{2}$ com as imagens de entrada nos dá como saída imagens suavizadas (com um leve borramento), pois nesse tipo de filtro, os valores de \textit{pixels} da vizinhança são levados em consideração no cálculo do \textit{pixel} central da posição corrente.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/baboon_h3.png}
+	\includegraphics[scale=.19]{figures/butterfly_h3.png}
+\caption{Resultado da aplicação do filtro $h_{3}$.} \label{gdimotes}
+\end{center}
+\end{figure}
+
+O filtro $h_{3}$ é do tipo passa-alta, pois a soma acumulada das células é 0. Esse é um filtro muito conhecido na área de processamento de imagens, denominado \textit{Filtro de Sobel}. A aplicação desse filtro consiste num operador que calcula diferenças finitas, dando uma aproximação do gradiente da intensidade dos \textit{pixels} da imagem. Como resultado da aplicação do filtro $h_{3}$ temos a detecção de bordas na vertical nas imagens de entrada.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/baboon_h4.png}
+	\includegraphics[scale=.19]{figures/butterfly_h4.png}
+\caption{Resultado da aplicação do filtro $h_{4}$.} \label{gdimotes}
+\end{center}
+\end{figure}
+
+O filtro $h_{4}$ também é do tipo passa-alta e também é denominado como \textit{Filtro de Sobel}. Porém, esse filtro detecta bordas na horizontal em imagens, atenuando esse valores para que passem a ficar mais visíveis na imagem de saída.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/baboon_h.png}
+	\includegraphics[scale=.19]{figures/butterfly_h.png}
+\caption{Resultado da expressão $\sqrt{(h_{3})^{2} + (h_{4})^{2}}$.} \label{gdimotes}
+\end{center}
+\end{figure}
+
+Como resultado da combinação, somando-se as respostas de cada um filtros por meio da expressão $\sqrt{(h_{3})^{2} + (h_{4})^{2}}$ temos uma imagem que equilibra a detecção de bordas na vertical, obtidas com a aplicação do filtro $h_{3}$, e a detecção de bordas na horizontal, obtidas com a aplicação do filtro $h_{4}$. Os componentes que estão elevados ao quadrado tem como objetivo a atenuação das componentes de alta intensidade, assim, com a operação de radiciação, obtemos um grau de combinação entre as linhas verticais e horizontais.
+
+Os resultados obtidos na execução dos códigos da \textbf{seção 1.2} estão a seguir:
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.17]{figures/baboon_mag_spec_4.png}
+	\includegraphics[scale=.17]{figures/baboon_gau_filter_4.png}
+	\includegraphics[scale=.17]{figures/baboon_mag_filter_4.png}
+	\includegraphics[scale=.17]{figures/baboon_result_4.png}
+\caption{Resultados obtidos com o sigma valendo 4.} \label{mag_4}
+\end{center}
+\end{figure}
+
+Na Figura~\ref{mag_4} temos, na primeira imagem, o espectro de magnitude gerado após a aplicação da \textit{Transformada Discreta de Fourier} na imagem e a componente de frequência zero ser transladada para o centro da imagem. Na segunda imagem da primeira linha temos a visualização gráfica de um filtro gaussiano com média 0 e desvio padrão de valor 4, como o filtro é do tamanho da imagem, os intensidades visíveis estão agrupadas em um circulo bem pequeno no centro da imagem, por conta do baixo valor de desvio padrão. Na primeira imagem da segunda linha temos o resultado da aplicação do filtro gaussiano no espectro de frequência da imagem \textit{baboon.png}. Como o filtro em questão possui um baixo valor de desvio padrão, então ao ser aplicado pelo espectro de frequência, ele deixa passar somente valores correspondentes a sua área. Nesse caso, o espectro de frequência resultante perdeu informações sobre as frequências mais altas (que são as componentes presentes em regiões mais escuras). Por fim, a segunda imagem da segunda linha é o resultado da aplicação da \textit{Transformada Inversa de Fourier}, que transforma a imagem de volta para o domínio espacial. Podemos observar que, como houve a aplicação de um filtro gaussiano com baixo desvio padrão, a imagem resultante possui um borramento alto em comparação com a imagem original.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.17]{figures/baboon_mag_spec_32.png}
+	\includegraphics[scale=.17]{figures/baboon_gau_filter_32.png}
+	\includegraphics[scale=.17]{figures/baboon_mag_filter_32.png}
+	\includegraphics[scale=.17]{figures/baboon_result_32.png}
+\caption{Resultados obtidos com o sigma valendo 32.} \label{mag_32}
+\end{center}
+\end{figure}
+
+Na Figura~\ref{mag_32} temos a mesma ordem da figura anterior, porém, nesse caso, o valor de desvio padrão aplicado foi de 32. Podemos ver que o filtro possui uma circunferência bem maior e que, assim, após a aplicação desse filtro no espectro de frequência da imagem original, o espectro de frequência resultante possui mais componentes de frequências mais altas do que a anterior. Portanto, após a aplicação da função inversa, vemos que a imagem resultante possui somente um leve borramento, pois seu espectro tinha mais informações.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.17]{figures/baboon_mag_spec_64.png}
+	\includegraphics[scale=.17]{figures/baboon_gau_filter_64.png}
+	\includegraphics[scale=.17]{figures/baboon_mag_filter_64.png}
+	\includegraphics[scale=.17]{figures/baboon_result_64.png}
+\caption{Resultados obtidos com o sigma valendo 64.} \label{mag_64}
+\end{center}
+\end{figure}
+
+Por fim, na Figura~\ref{mag_64} temos um filtro gaussiano com desvio padrão valendo 64. Podemos observar que o filtro ficou bem mais abrangente, em relação aos anteriores, e que sua aplicação no espectro de frequência deixou passar componentes de frequências bem mais altas, que resultam em mais informações para a reconstrução da imagem inicial. Como resultado final, vemos que a imagem possui um grau de detalhes bem maior que os resultados anteriores e que já é bem mais próxima da imagem original.
+
+Portanto, com esses resultados podemos observar que quanto maior o filtro gaussiano, mais informações do espectro de frequência vão ser liberados e, assim, na aplicação da \textit{Transformação Inversa de Fourier}, a função terá bem mais informações para a resconstrução da imagem original. Quanto mais informações no espectro de frequência resultante, mais próximo da imagem original é o resultante e, analogamente, quanto menos informações no espectro de frequência resultante, mais distante (mais borrado) da imagem original é o resultado.
+
+%------------------------------------------------
+
+\section{Conclusão}
+
+Podemos concluir que os resultados obtidos na \textbf{seção 1.1} e na \textbf{seção 1.2} foram satisfatórios quanto a especificação do trabalho e que a visualização prática dos tipos de filtros (passa-alta e passa-baixa), aplicação de filtros no domínio de frequência, mudanças de domínios das imagens e combinação de resultados, consolida ainda mais os conceitos vistos em sala de aula.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -321,5 +448,67 @@ O formato dos nomes de saída estão da seguinte forma: para a seção \textbf{1
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
+
+\section*{Anexos}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/butterfly_mag_spec_2.png}
+	\includegraphics[scale=.19]{figures/butterfly_gau_filter_2.png}
+	\includegraphics[scale=.19]{figures/butterfly_mag_filter_2.png}
+	\includegraphics[scale=.19]{figures/butterfly_result_2.png}
+\caption{Resultados obtidos com o sigma valendo 2.} \label{mag_64}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/butterfly_mag_spec_4.png}
+	\includegraphics[scale=.19]{figures/butterfly_gau_filter_4.png}
+	\includegraphics[scale=.19]{figures/butterfly_mag_filter_4.png}
+	\includegraphics[scale=.19]{figures/butterfly_result_4.png}
+\caption{Resultados obtidos com o sigma valendo 4.} \label{mag_64}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/butterfly_mag_spec_8.png}
+	\includegraphics[scale=.19]{figures/butterfly_gau_filter_8.png}
+	\includegraphics[scale=.19]{figures/butterfly_mag_filter_8.png}
+	\includegraphics[scale=.19]{figures/butterfly_result_8.png}
+\caption{Resultados obtidos com o sigma valendo 8.} \label{mag_64}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/butterfly_mag_spec_16.png}
+	\includegraphics[scale=.19]{figures/butterfly_gau_filter_16.png}
+	\includegraphics[scale=.19]{figures/butterfly_mag_filter_16.png}
+	\includegraphics[scale=.19]{figures/butterfly_result_16.png}
+\caption{Resultados obtidos com o sigma valendo 16.} \label{mag_64}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/butterfly_mag_spec_32.png}
+	\includegraphics[scale=.19]{figures/butterfly_gau_filter_32.png}
+	\includegraphics[scale=.19]{figures/butterfly_mag_filter_32.png}
+	\includegraphics[scale=.19]{figures/butterfly_result_32.png}
+\caption{Resultados obtidos com o sigma valendo 32.} \label{mag_64}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=.19]{figures/butterfly_mag_spec_64.png}
+	\includegraphics[scale=.19]{figures/butterfly_gau_filter_64.png}
+	\includegraphics[scale=.19]{figures/butterfly_mag_filter_64.png}
+	\includegraphics[scale=.19]{figures/butterfly_result_64.png}
+\caption{Resultados obtidos com o sigma valendo 64.} \label{mag_64}
+\end{center}
+\end{figure}
 
 \end{document}
