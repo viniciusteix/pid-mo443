@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.13)  16 APR 2019 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.13)  16 APR 2019 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1132,19 +1132,19 @@ Package pdftex.def Info: figures/h4.png  used on input line 275.
  [3 <./figures/entrada.png> <./figures/filtro.png> <./figures/resultado.png> <.
 /figures/mult1.png> <./figures/multi5.png> <./figures/mult9.png> <./figures/h1.
 png> <./figures/h2.png> <./figures/h3.png> <./figures/h4.png>]
-Overfull \hbox (17.64754pt too wide) detected at line 292
+Overfull \hbox (13.61095pt too wide) detected at line 292
 \OML/zplm/m/it/10 F\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 u\OT1/pplx/m/n/10 , \OML
-/zplm/m/it/10 v\OT1/zplm/m/n/10 ) = [][] [][] \OML/zplm/m/it/10 f\OT1/zplm/m/n/
-10 (\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 y\OT1/zplm/m/n/10 )
-\OML/zplm/m/it/10 exp [] dxdy
+/zplm/m/it/10 v\OT1/zplm/m/n/10 ) = [] [] \OML/zplm/m/it/10 f\OT1/zplm/m/n/10 (
+\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 y\OT1/zplm/m/n/10 )\OML
+/zplm/m/it/10 exp [] dxdy
  []
 
 
-Overfull \hbox (16.37776pt too wide) detected at line 298
+Overfull \hbox (12.34117pt too wide) detected at line 298
 \OML/zplm/m/it/10 f\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \OML
-/zplm/m/it/10 y\OT1/zplm/m/n/10 ) = [][] [][] \OML/zplm/m/it/10 F\OT1/zplm/m/n/
-10 (\OML/zplm/m/it/10 u\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 v\OT1/zplm/m/n/10 )
-\OML/zplm/m/it/10 exp [] dudv\OT1/pplx/m/n/10 .
+/zplm/m/it/10 y\OT1/zplm/m/n/10 ) = [] [] \OML/zplm/m/it/10 F\OT1/zplm/m/n/10 (
+\OML/zplm/m/it/10 u\OT1/pplx/m/n/10 , \OML/zplm/m/it/10 v\OT1/zplm/m/n/10 )\OML
+/zplm/m/it/10 exp [] dudv\OT1/pplx/m/n/10 .
  []
 
 <figures/sequencia_fourier.png, id=117, 575.14874pt x 117.43875pt>
@@ -1500,11 +1500,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 514.
  ) 
 Here is how much of TeX's memory you used:
- 12318 strings out of 492982
- 189870 string characters out of 6134896
+ 12319 strings out of 492982
+ 189875 string characters out of 6134896
  320058 words of memory out of 5000000
  15272 multiletter control sequences out of 15000+600000
- 66648 words of font info for 296 fonts, out of 8000000 for 9000
+ 66948 words of font info for 297 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,11n,43p,1429b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1516,7 +1516,7 @@ ic/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fp
 lrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on article_2.pdf (8 pages, 7133147 bytes).
+Output written on article_2.pdf (8 pages, 7133549 bytes).
 PDF statistics:
  306 PDF objects out of 1000 (max. 8388607)
  167 compressed objects within 2 object streams

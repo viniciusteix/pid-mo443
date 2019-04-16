@@ -288,13 +288,13 @@ A Transformada Discreta de Fourier (DFT) é uma transformação de coordenadas e
 A Transformada de Fourier para duas variáveis pode ser escrita da seguinte forma:
 
 \begin{equation*}
-	F(u,v) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y)exp\left[-j2\pi(ux + vy\right] dx dy
+	F(u,v) = \sum_{x = 0}^{N - 1} \sum_{y = 0}^{N - 1} f(x,y)exp\left[-j2\pi(ux + vy\right] dx dy
 \end{equation*}
 
 e a partir de $F(u,v)$, pode-se obter $f(x,y)$ através da Transformada Inversa de Fourier:
 
 \begin{equation*}
-	f(x,y) =  \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F(u,v)exp\left[j2\pi(ux + vy)\right] du dv.
+	f(x,y) =  \sum_{u = 0}^{N - 1} \sum_{v = 0}^{N - 1} F(u,v)exp\left[j2\pi(ux + vy)\right] du dv.
 \end{equation*}
 
 Na filtragem no domínio de frequência, o principal objetivo, é que as operações de convolução possuem o custo computacional menor do que no domínio espacial. Portanto, normalmente, o processamento de imagens possuem a seguinte sequência.
