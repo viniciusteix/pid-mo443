@@ -63,7 +63,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{MO443 $\bullet$ Abril 2019 $\bullet$ Relatório 01} % Custom header text
+\fancyhead[C]{MO443 $\bullet$ Maio 2019 $\bullet$ Relatório 02} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -83,7 +83,7 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Relatório - Trabalho 01 \\ \Large MO443 - Introdução ao Processamento de Imagem Digital} %
+\title{Relatório - Trabalho 02 \\ \Large MO443 - Introdução ao Processamento de Imagem Digital} %
 %\subtitle{qsdqwdqwd} %Article title
 \author{%
 \textsc{Vinicius Teixeira de Melo - RA: 230223} \\[1ex] % Your name
@@ -114,78 +114,109 @@
 
 \section{Especificação do Problema}
 
-O objetivo deste trabalho é implementar alguns filtros de imagens no domínio espacial e de frequências. A filtragem aplicada a uma imagem digital é uma operação local que altera os valores de intensidade dos pixels da imagem levando-se em conta tanto o valor do pixel em questão quanto valores de pixels vizinhos.
+O objetivo deste trabalho é implementar duas técnicas de quantização de cores, definidas como técnicas de pontilhado que visam reduzir a quantidade de cores utilizadas para exibir uma imagem, procurando manter uma boa percepção por parte do usuário.
 
-No processo de filtragem, utiliza-se uma operação de convolução de uma máscara pela imagem. Este processo equivale a percorrer toda a imagem alterando seus valores conforme os pesos da máscara e as intensidades da imagem.
+O trabalho é dividido em duas partes. A primeira é escrever uma função para alterar os níveis de cinza $[f_{min} \dots f_{max}]$ de uma imagem $f(x,y)$ por meio das técnicas de pontilhado (\textit{half-toning}) ordenado, produzindo uma imagem $g(x,y)$.
 
-O trabalho está dividido em duas seções principais:
+O algoritmo de pontilhado ordenado utiliza um conjunto de padrões formados por pontos pretos e brancos. O conjunto de dez padrões, ilustrados na Figura~\ref{padroes}, pode ser representado por meio da matriz $M_{3x3}$ a seguir:
 
-\begin{itemize}
-	\item Filtragem no Domínio Espacial
-	\item Filtragem no Domínio de Frequências
-\end{itemize}
+\vspace{0.5cm}
 
-Na seção de filtragem no domínio espacial, são dados 4 seguintes tipos de filtros:
-
-\begin{enumerate}[label=(\alph*)]
-\item $h_{1} = $ \begin{tabular}[H]{|c|c|c|c|c|}
+$M_{3x3} = $ \begin{tabular}{|c|c|c|}
 \hline
-0  & 0  & -1 & 0  & 0  \\ \hline
-0  & -1 & -2 & -1 & 0  \\ \hline
--1 & -2 & 16 & -2 & -1 \\ \hline
-0  & -1 & -2 & -1 & 0  \\ \hline
-0  & 0  & -1 & 0  & 0  \\ \hline
+6 & 8 & 4 \\ \hline
+1 & 0 & 3 \\ \hline
+5 & 2 & 7 \\ \hline
 \end{tabular}
 
-\item $h_{2} = \frac{1}{256}$ \begin{tabular}{|c|c|c|c|c|}
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=2cm]{figures/padroes.png}
+\caption{Dez padrões de 3 x 3 pixels.} \label{padroes}
+\end{center}
+\end{figure}
+
+Os valores das células da matriz podem ser utilizados como limiares. Se o valor do pixel (normalizado entre 0 e 9) for menor do que o número correspondente à célula da matriz, o pixel será substituído pelo valor preto, caso contrário, será substituído pelo valor branco.
+
+Uma outra máscara, conhecida como matriz de pontilhado ordenado de Bayer, é dada por
+
+\vspace{0.3cm}
+
+$M_{4x4} = $ \begin{tabular}{|c|c|c|c|}
 \hline
-1 & 4  & 6  & 4  & 1 \\ \hline
-4 & 16 & 24 & 16 & 4 \\ \hline
-6 & 24 & 36 & 24 & 6 \\ \hline
-4 & 16 & 24 & 16 & 4 \\ \hline
-1 & 4  & 6  & 4  & 1 \\ \hline
+0  & 12 & 3  & 15 \\ \hline
+8  & 4  & 11 & 7  \\ \hline
+2  & 14 & 1  & 13 \\ \hline
+10 & 6  & 9  & 5  \\ \hline
 \end{tabular}
 
-\item $h_{3} = $ \begin{tabular}{|c|c|c|}
-\hline
--1 & 0 & 1 \\ \hline
--2 & 0 & 2 \\ \hline
--1 & 0 & 1 \\ \hline
-\end{tabular}
+\vspace{0.3cm}
 
-\item $h_{4} = $ \begin{tabular}{|c|c|c|}
-\hline
--1 & -2 & -1 \\ \hline
-0  & 0  & 0  \\ \hline
-1  & 2  & 1  \\ \hline
-\end{tabular}
+A segunda parte do trabalho é aplicar o algoritmo de pontilhado por difusão de erro também transforma a imagem original em uma imagem contendo apenas os valores preto e branco, entretanto, leva em consideração os valores ao redor de cada pixel. A técnica de pontilhado por difusão de erro de \textit{Floyd-Steinberg} é resumida a seguir:
+
+\begin{enumerate}
+	\item percorra todos os pixels da imagem, segundo uma ordem pré-definida;
+	\item para cada pixel, se seu valor for maior do que 128, troque-o para 255 (branco). Caso contrário, troque-o para 0 (preto). Armazene o erro, ou seja, a diferença entre o valor exato do pixel e o valor aproximado.
+	\item distribua o erro aos pixels adjacentes, da seguinte forma (Figura~\ref{distribuicao}):
+		\begin{enumerate}
+			\item adicione $\dfrac{7}{16}$ do erro ao pixel localizado à direita.
+			\item adicione $\dfrac{3}{16}$ do erro ao pixel localizado abaixo e à esquerda.
+			\item adicione $\dfrac{5}{16}$ do erro ao pixel localizado abaixo.
+			\item adicione $\dfrac{1}{16}$ do erro ao pixel localizado abaixo e à direita.
+		\end{enumerate}
 \end{enumerate}
 
-As aplicações dos filtros devem ser feitas de forma individual, porém, os filtros $h_{3}$ e $h_{4}$ devem ser aplicados de forma combinada, somando-se as respostas de cada um dos filtros por meio da seguinte expressão: $\sqrt{(h_{3})^{2} + (h_{4}})^{2}$.
+\begin{figure}[H]
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+\hline
+     &        &      \\ \hline
+     & f(x,y) & 7/16 \\ \hline
+3/16 & 5/16   & 1/16 \\ \hline
+\end{tabular}
+\caption{Distribuição de erro na técnica de pontilhado com difusão de erro de \textit{Floyd-Steinberg}.} \label{distribuicao}
+\end{center}
+\end{figure}
 
-Na seção de filtragem no domínio de frequências, é necessário aplicar um filtro Gaussiano em uma imagem representada por seu espectro de Fourier, e a componente de frequência zero deve ser transladada para o centro do espectro. Nesse experimento, é necessário testar diferentes graus de suavização, de forma a borrar a imagem com mais ou menos intensidade.
+A ordem na qual a imagem é percorrida pode produzir resultados diferentes no processo de dithering. A varredura da esquerda para a direita (Figura~\ref{varredura}(a)) pode gerar padrões indesejados ou a impressão de uma certa direcionalidade na imagem resultante. Para evitar esses efeitos, uma alternativa é modificar a direção de varredura a cada linha (Figura~\ref{varredura}(b)).
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=2cm]{figures/varredura.png}
+\caption{Formas de varredura da imagem.} \label{varredura}
+\end{center}
+\end{figure}
+
+Portanto, o trabalho é a aplicação dessas duas técnicas de pontilhado.
 
 %------------------------------------------------
 
 \section{Entrada de Dados}
 
-O código fonte criado para a execução de todas as tarefas está no notebook \textbf{Trabalho 01.ipynb}. O código foi criado para aceitar imagens em tons de cinza no formato RGB (\textit{Red, Green and Blue}) do tipo PNG (\textit{Portable Network Graphics}).
+O código fonte criado para a execução de todas as tarefas está no notebook \textbf{Trabalho 02.ipynb}. O código foi criado para aceitar imagens em tons de cinza do tipo PGM (\textit{Portable GrayMap}).
 
-Para executar o notebook, basta iniciar o ambiente \textit{Jupyter Notebook}, abrir o notebook \textbf{Trabalho 01.ipynb} e executar as células em ordem. Todo o algoritmo foi implementado na linguagem Python na versão 3.6.
+Para executar o notebook, basta iniciar o ambiente \textit{Jupyter Notebook}, abrir o notebook \textbf{Trabalho 02.ipynb} e executar as células em ordem. Todo o algoritmo foi implementado na linguagem Python na versão 3.6.
 
-As imagens de entrada utilizadas nos testes do algoritmo foram retiradas da página do prof. Hélio Pedrini: \href{http://www.ic.unicamp.br/~helio/imagens_png/}{Imagens}. Na pasta \textbf{imgs/} estão as duas imagens monocromáticas utilizadas nos testes: \textbf{baboon.png} e \textbf{butterfly.png}. As dimensões das imagens de entrada utilizadas são 512x512.
+As imagens de entrada utilizadas nos testes do algoritmo foram retiradas da página do prof. Hélio Pedrini: \href{http://www.ic.unicamp.br/~helio/imagens_pgm/}{Imagens}. Na pasta \textbf{imgs/} estão as três imagens monocromáticas utilizadas nos testes: \textbf{baboon.pgm}, \textbf{fiducial.pgm} e \textbf{monarch.pgm}. As dimensões das imagens de entrada utilizadas são 512x512, 640x480 e 768x512, respectivamente.
 
-\begin{figure}[tb]
+\begin{figure}[H]
 \begin{center}
-	\includegraphics[height=5cm]{figures/baboon.png}
-\caption{baboon.png} \label{gdimotes}
+	\includegraphics[height=3cm]{figures/baboon.png}
+\caption{baboon.pgm} \label{gdimotes}
 \end{center}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[H]
 \begin{center}
-	\includegraphics[height=5cm]{figures/butterfly.png}
-\caption{butterfly.png} \label{gdimotes}
+	\includegraphics[height=3cm]{figures/fiducial.png}
+\caption{fiducial.pgm} \label{gdimotes}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=3cm]{figures/monarch.png}
+\caption{monarch.pgm} \label{gdimotes}
 \end{center}
 \end{figure}
 
@@ -202,236 +233,132 @@ As bibliotecas utilizadas neste trabalho foram:
 numpy               & 1.16.2          \\ \hline
 cv2                 & 3.4.2           \\ \hline
 matplotlib          & 3.0.3           \\ \hline
-skimage             & 0.15.0          \\ \hline
-scipy               & 1.2.1           \\ \hline
 warnings            & 2.1             \\ \hline
 \end{tabular}
 \end{table}
 
 A leitura das imagens foi realizada utilizando uma função do \textbf{opencv} \cite{b1} chamada \textbf{imread()}, a qual necessitou de uma constante do próprio \textbf{opencv} para que a imagem ficassem apenas com o canal de escala de cinza, essa constante é denominada \textbf{IMREAD\_GRAYSCALE}.
 
-Os filtros foram gerados manualmente através da função \textbf{numpy.array()}. A função para gerar o preenchimento de borda presente no código utiliza uma função pronta do \textbf{opencv} denominada \textbf{copyMakeBorder()}, a qual preenche na largura a na altura a imagem com valor de \textit{pixel} 0.
+As máscaras foram gerados manualmente através da função \textbf{numpy.array()}. A função para normalizar os níveis de cinza foi feita aplicando a fórmula de mudança de base descrita a seguir:
 
-A função de convolução 2D foi criada manualmente, mas antes de acontecer as multiplicações e somas, o filtro sofre uma rotação de $180^{\circ}$ utilizando a função \textbf{numpy.rot90()} duas vezes. Para plotar os resultados utilizamos a biblioteca \textbf{matplotlib}.
+\begin{equation*}
+	g(x) = \left(\dfrac{g_{max} - g_{min}}{f_{max} - f_{min}}\right) (f(x) - f_{min}) + g_{min}
+\end{equation*}
 
-Para o cálculo da última questão da \textbf{seção 1.1}, foi necessário transformar a saída da aplicação do filtro $h_{3}$ e $h_{4}$ em inteiros de 32 \textit{bits}, pois na expressão $\sqrt{(h_{3})^{2} + (h_{4}})^{2}$ pode haver um estouro de inteiro, por conta de estar representado, inicialmente, por inteiros de 8 \textit{bits}.
+A função de aplicação da técnica de pontilhamento \textit{half-toning} foi feita manualmente, aplicando primeiramente a normalização de intensidade dos pixels, e depois o preenchimento da nova imagem com base nos valores que eram obtidos através da utilização da máscara como \textit{threshold}.
 
-Na \textbf{seção 1.2} são utilizadas as funções \textbf{cv2.dft()} e \textbf{cv2.idft()} para transformação de Fourier e transformação inversa de Fourier, respectivamente. Após levar a imagem para o domínio de frequência é necessário transladar a componente de frequência zero para o centro da imagem, para isso é utilizado a função \textbf{numpyp.fft.fftshift()} e, para ter essa operação inversa, é utilizado a função \textbf{numpy.fft.ifftshift()}.
+As funções para a aplicação da técnica de pontilhamento com difusão de erro de \textit{Floyd-Steinberg} também foram feitas manualmente, a qual a primeira, \textbf{floyd\_steinberg\_order1}, percorre a imagem como mostrado na Figura~\ref{varredura}(a) e a segunda, \textbf{floyd\_steinberg\_order2}, percorre a imagem como mostrado na Figura~\ref{varredura}(b).
 
 %------------------------------------------------
 
 \section{Fundamentação}
 
-\subsection{Preenchimento de borda}
+\subsection{Pontilhado Ordenado}
 
-As imagens de entrada foram carregadas em memória utilizando uma função do \textbf{OpenCv} \cite{b1} que lê a imagem em escala de cinza e salva em uma estrutura $I_{m x n}$, na qual $m$ e $n$ representa a largura e a altura da imagem, respectivamente.
+Também conhecido como \textit{Halftone} (meio-tom), o pontilhado ordenado é uma técnica de processamento de imagens que emprega padrões de pontos pretos ou brancos para reduzir o número de níveis de cinza de uma representação. Defivo ao fato do sistema visual humano atenuar a distinção entre os pontos com tons diferentes, os padrões de pontos pretos e brancos produzem um efeito visual como se a imagem fosse composto por mais tons de cinza \cite{b4}.
 
-Para a aplicação da operação de convolução na imagem, foi necessário realizar um pré-processamento chamado de \textit{padding}. A operação de \textit{padding} é usada para gerar espaços em torno do conteúdo de um elemento, nesse caso, a imagem. Nesse trabalho, o \textit{padding} gerado nas imagens foi de tamanho $\floor*{\frac{x}{2}}$, onde $x$ é a dimensão do filtro que será convoluído com a imagem. Todo o \textit{padding} foi preenchido com o valor $0$, ou seja, com a cor preta.
-
-\subsection{Convolução 2D}
-
-Convolução 2D é uma operação que, a partir de imagem e um filtro, resulta em uma terceira imagem que mede a soma do produto da imagem e o filtro inicial ao longo da região subentendida pela superposição delas em função do deslocamento existente entre elas.
+No caso de uma máscara $3x3$, cada conjunto de níveis de cinza é representado por um padrão $3x3$ de pontos brancos ou pretos. Uma área de $3x3$ pixels cheia de pontos pretos é uma aproximação de um nível de cinza preto (ou 0). De forma análoga, uma área $3x3$ de pontos totalmente brancos será uma aproximação do branco em uma escala de nível de cinza (ou 9). Os demais padrões intermediários entre $]0,255[$ serão re-escalados para o intervalo $[0,9]$, conforme ilustrado na Figura~\ref{escalas}.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.2]{figures/entrada.png}
-	\includegraphics[scale=.2]{figures/filtro.png}
-	\includegraphics[scale=.2]{figures/resultado.png}
-\caption{Exemplo de imagem, filtro e resultado da convolução, respectivamente.} \label{gdimotes}
+	\includegraphics[scale=.009]{figures/escalas.jpg}
+\caption{Transformação de escala com uma máscara $3x3$.} \label{escalas}
 \end{center}
 \end{figure}
 
-A operação de convolução, primeiramente, rotaciona o filtro em $180^{\circ}$ e depois multiplica \textit{pixel} a \textit{pixel}, da seguinte forma:
+É possível notar que utilizamos nove limiares (\textit{threshold}) para a sub-codificação: o intervalo $[0,25.5[$ é truncado para $0$, $[25.5,51[$ é truncado para $1$, $[51,76.5[$ para $2$, e assim por diante. Assim, cada pixel na imagem de entrada irá corresponder a um padrão de $3x3$ pixels na imagem gerada. Desta forma, a resolução espacial será reduzida a $33\%$ da resolução espacial original. Isto é, antes da substituição de cada pixel pela máscara devemos reduzir em $\frac{1}{3}$ as dimensões da imagem para que o resultado tenha o mesmo tamanho da original \cite{b4}.
 
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.2]{figures/mult1.png}
-	\includegraphics[scale=.2]{figures/multi5.png}
-	\includegraphics[scale=.2]{figures/mult9.png}
-\caption{Exemplo de aplicação de convolução 2D.} \label{gdimotes}
-\end{center}
-\end{figure}
+\subsection{Pontilhado com Difusão de Erro}
 
-Nesse trabalho, foram utilizados 2 tipos de filtros:
+Pontilhado com difusão de erro é uma técnica de \textit{halftone} que procura distribuir a diferença entre o valor exato de cada pixel e seu valor aproximado a um conjunto de pixels adjacentes. Diversas técnicas foram desenvolvidas com esta proposta, sendo o algoritmo de Floyd-Steinberg o primeiro desenvolvido utilizando esta abordagem \cite{b5}.
 
-\begin{enumerate}
-	\item Filtro passa-alta: filtros utilizados para realçar certas características presentes nas imagens, tais como bordas, linhas ou regiões de interesse \cite{b2}.
-	\item Filtro passa-baixa: filtros utilizados para suavizar as imagens, uma vez que as frequências altas correspondem às transições abruptas são atenuadas \cite{b2}.
-\end{enumerate}
+O algoritmo varre a imagem da esquerda para a direita, de cima para baixo, quantificando os valores de pixel um por um. O erro de quantização é transferido para os pixels vizinhos, embora não afete os pixels que já foram quantizados. Assim, se um número de pixels tiver sido arredondado para baixo, torna-se mais provável que o próximo pixel seja arredondado para cima, de modo que, em média, o erro de quantização seja próximo de zero.
 
-Os filtro $h_{1}$, $h_{3}$ e $h_{4}$ são exemplos de filtros passa-alta. Já o filtro $h_{2}$ é um exemplo de filtro passa-baixa. A seguir temos a exemplificação gráfica desses filtros.
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.3]{figures/h1.png}
-	\includegraphics[scale=.3]{figures/h2.png}
-\caption{Filtros $h_{1}$ e $h_{2}$.} \label{gdimotes}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.3]{figures/h3.png}
-	\includegraphics[scale=.3]{figures/h4.png}
-\caption{Filtros $h_{3}$ e $h_{4}$.} \label{gdimotes}
-\end{center}
-\end{figure}
-
-\subsection{Redimensionamento}
-
-A operação de redimensionamento foi utilizada para transformar as saídas da operação de convolução 2D, que não necessariamente estavam no intervalo de escalas de cinza de $\left[0,255\right]$, de volta ao intervalo de escalas de cinza representado por inteiros de 8 \textit{bits}.
-
-\subsection{Transformada Discreta de Fourier}
-
-A Transformada Discreta de Fourier (DFT) é uma transformação de coordenadas em componentes pertencentes ao conjunto dos números complexos, em que cada coeficiente é obtido pela combinação linear dos elementos da entrada com o núcleo da transformada \cite{b2}.
-
-A Transformada de Fourier para duas variáveis pode ser escrita da seguinte forma:
-
-\begin{equation*}
-	F(u,v) = \sum_{x = 0}^{N - 1} \sum_{y = 0}^{N - 1} f(x,y)exp\left[-j2\pi(ux + vy\right] dx dy
-\end{equation*}
-
-e a partir de $F(u,v)$, pode-se obter $f(x,y)$ através da Transformada Inversa de Fourier:
-
-\begin{equation*}
-	f(x,y) =  \sum_{u = 0}^{N - 1} \sum_{v = 0}^{N - 1} F(u,v)exp\left[j2\pi(ux + vy)\right] du dv.
-\end{equation*}
-
-Na filtragem no domínio de frequência, o principal objetivo, é que as operações de convolução possuem o custo computacional menor do que no domínio espacial. Portanto, normalmente, o processamento de imagens possuem a seguinte sequência.
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.35]{figures/sequencia_fourier.png}
-\caption{Sequência usualmente utilizada para as operações de processamento de imagens.} \label{gdimotes}
-\end{center}
-\end{figure}
-
-\subsection{Filtro Gaussiano}
-
-Os filtros Gaussianos são um tipo de filtro passa-baixa, os quais suavizam a imagem filtrada. Nos filtros Gaussianos, os coeficientes da máscara são derivados a partir de uma função Gaussiana bidimensional \cite{b2}. A função Gaussiana discreta com média zero e desvio padrão $\sigma$ é definida como
-
-\begin{equation*}
-	G(x,y) = \dfrac{1}{2\pi\sigma^{2}}exp\left(\dfrac{-(x^{2} + y^{2})}{2\sigma^{2}}\right).
-\end{equation*}
-
-As variações de sigma utilizados neste trabalho foram: $\sigma = \left[2,4,8,16,32,64\right]$.
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.2]{figures/filtro_gaussiano.png}
-\caption{Exemplificação gráfica de um filtro Gaussiano.} \label{gdimotes}
-\end{center}
-\end{figure}
+Os coeficientes de difusão têm a propriedade de que, se os valores de pixel originais estiverem exatamente na metade entre as cores disponíveis mais próximas, o resultado pontilhado será um padrão de tabuleiro de damas. Por exemplo, $50\%$ de dados em cinza podem ser pontilhados como um padrão quadriculado preto e branco. Para um pontilhamento ótimo, a contagem de erros de quantização deve ter precisão suficiente para evitar que os erros de arredondamento afetem o resultado \cite{b6}.
 
 %------------------------------------------------
 
 \section{Saída de Dados}
 
-Os imagens resultantes da seção \textbf{1.1} e \textbf{1.2} foram salvas dentro da pasta \textbf{resultados/} utilizando uma função da biblioteca \textbf{matplotlib} chamada \textbf{matplotlib.pyplot.imsave()} \cite{b3}.
+Os imagens resultantes foram salvas dentro da pasta \textbf{resultados/} utilizando uma função da biblioteca \textbf{opencv} chamada \textbf{cv2.imwrite()} \cite{b1}.
 
-O formato dos nomes de saída estão da seguinte forma: para a seção \textbf{1.1} o padrão é o nome da imagem de entrada (\textit{baboon} ou \textit{butterfly}) concatenado com o nome do filtro aplicado sobre ela; na seção \textbf{1.2} são geradas 4 imagens principais resultantes para cada valor de sigma atribuído na função de criar um filtro gaussiano.
+O formato dos nomes de saída estão da seguinte forma: para a técnica de pontilhado ordenado o padrão é o nome da imagem de entrada (\textit{baboon}, \textit{fiducial} e \textit{monarch}) concatenado com o nome da máscara considerada para a aplicação da função sobre ela; para a técnica de pontilhado com difusão de erros são gerados duas imagens de saída para cada imagem de entrada, uma para cada forma de percorrer a imagem.
 
 %------------------------------------------------
 
 \section{Resultados e Discuções}
 
-Os resultados obtidos na execução dos códigos da \textbf{seção 1.1} estão a seguir:
+Os resultados obtidos com a aplicação da técnica de pontilhado ordenado (\textit{halg-toning}) estão a seguir:
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.19]{figures/baboon_h1.png}
-	\includegraphics[scale=.19]{figures/butterfly_h1.png}
-\caption{Resultado da aplicação do filtro $h_{1}$.} \label{gdimotes}
+	\includegraphics[height=4cm]{figures/baboon_m33.png}
+	\includegraphics[height=4cm]{figures/baboon_m44.png}
+\caption{Aplicação das máscaras $M_{3x3}$ e $M_{4x4}$, respectivamente, na imagem \textbf{baboon.pgm}.} \label{baboonm33m44}
 \end{center}
 \end{figure}
 
-Como já dito, o filtro $h_{1}$ é do tipo passa-alta, o qual atenua o valor central da máscara considerada na imagem. Como resultado da passagem desse filtros nas imagens de entrada, podemos observar que os \textit{pixels} de maior intensidade na imagem original foram intensificados, e os \textit{pixels} de menor intensidade tiveram seus valores reduzidos.
+A Figura~\ref{baboonm33m44} apresenta os resultados da aplicação na imagem \textbf{baboon.pgm}, o qual o resultado da esquerda sofreu um aumento nas dimensões da imagem de $300\%$, pois isso está diretamente ligado ao tamanho da máscara. Como a máscara é $3x3$, a imagem resultando possui $3$ vezes mais \textit{pixels} na dimensão $x$ e $y$. A imagem resultante é formada também só por \textit{pixels} pretos e brancos, pois cada \textit{pixel} da imagem original resulta em ''um \textit{pixel}'' do tamanho da máscara com valores $0$ ou $255$, porém no final, as imagens são transformadas em binárias para que cada \textit{pixel} seja representado por um bit. A imagem que representa o resultado da aplicação da máscara $M_{4x4}$ (imagem da direita), possui dimensoes $4$ vezes maiores, por conta do tamanho da máscara. Como resutado visual, podemos observar que as imagens sofreram uma granularização dos \textit{pixels} de acordo com o tamanho da máscara, é possível observar pequenos quadrados, proporcionais ao tamanho da máscara, na imagem. Então, podemos constatar que quanto maior for a máscara, maior será a imagem resultante e menor será a percepção desses quadrados, se as imagens forem vistas com uma mesma dimensão final.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.19]{figures/baboon_h2.png}
-	\includegraphics[scale=.19]{figures/butterfly_h2.png}
-\caption{Resultado da aplicação do filtro $h_{2}$.} \label{gdimotes}
+	\includegraphics[height=3cm]{figures/fiducial_m33.png}
+	\includegraphics[height=3cm]{figures/fiducial_m44.png}
+\caption{Aplicação das máscaras $M_{3x3}$ e $M_{4x4}$, respectivamente, na imagem \textbf{fiducial.pgm}.} \label{fiducialm33m44}
 \end{center}
 \end{figure}
 
-O filtro $h_{2}$ é do tipo passa-baixa, pois é baseado em uma distribuição estatística, nesse caso, a média. O resultado obtido pela convolução do filtro $h_{2}$ com as imagens de entrada nos dá como saída imagens suavizadas (com um leve borramento), pois nesse tipo de filtro, os valores de \textit{pixels} da vizinhança são levados em consideração no cálculo do \textit{pixel} central da posição corrente.
+Na Figura~\ref{fiducialm33m44}, podemos constatar que o tamanho das imagens foi alterado também de acordo com o tamanho das máscaras, e como essa imagem de entrada possui menos detalhes que a anterior, pode-se observar melhor a diferença entre a aplicação das duas máscaras, a qual a máscara $M_{4x4}$ torna a imagem resultante mais nítida que a aplicação com a máscara $M_{3x3}$.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.19]{figures/baboon_h3.png}
-	\includegraphics[scale=.19]{figures/butterfly_h3.png}
-\caption{Resultado da aplicação do filtro $h_{3}$.} \label{gdimotes}
+	\includegraphics[height=3cm]{figures/monarch_m33.png}
+	\includegraphics[height=3cm]{figures/monarch_m44.png}
+\caption{Aplicação das máscaras $M_{3x3}$ e $M_{4x4}$, respectivamente, na imagem \textbf{monarch.pgm}.} \label{monarchm33m44}
 \end{center}
 \end{figure}
 
-O filtro $h_{3}$ é do tipo passa-alta, pois a soma acumulada das células é 0. Esse é um filtro muito conhecido na área de processamento de imagens, denominado \textit{Filtro de Sobel}. A aplicação desse filtro consiste num operador que calcula diferenças finitas, dando uma aproximação do gradiente da intensidade dos \textit{pixels} da imagem. Como resultado da aplicação do filtro $h_{3}$ temos a detecção de bordas na vertical nas imagens de entrada.
+Na Figura~\ref{monarchm33m44}, podemos observar que algumas regiões sofreram um ''agrupamento de intensidades'' bem maior com a máscara $M_{3x3}$ do que com a máscara $M_{4x4}$, a qual torna a imagem resultante com maior diferenciação visual das regiões, tendo assim um resultado melhor que o da aplicação da máscara $M_{3x3}$.
+
+Os resultados obtidos com a aplicação da técnica de pontilhado com difusão de erro (\textit{Floyd-Steinberg}) estão a seguir:
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.19]{figures/baboon_h4.png}
-	\includegraphics[scale=.19]{figures/butterfly_h4.png}
-\caption{Resultado da aplicação do filtro $h_{4}$.} \label{gdimotes}
+	\includegraphics[height=4cm]{figures/baboon_floyd_order1.png}
+	\includegraphics[height=4cm]{figures/baboon_floyd_order2.png}
+\caption{Aplicação a técnica de pontilhado com difusão de erros percorrendo a imagem \textbf{baboon.pgm} das duas formas.} \label{baboonmfloyd}
 \end{center}
 \end{figure}
 
-O filtro $h_{4}$ também é do tipo passa-alta e também é denominado como \textit{Filtro de Sobel}. Porém, esse filtro detecta bordas na horizontal em imagens, atenuando esse valores para que passem a ficar mais visíveis na imagem de saída.
+A Figura~\ref{baboonmfloyd} apresenta os resultados obtidos com a aplicação da técnica de pontilhado com difusão de erros, com duas formas de percorrer a imagem de entrada. As imagens resultantes não sofrem mudança nas suas dimensões, diferente da técnica anterior, e também são formadas apenas por \textit{pixels} pretos e brancos. Como a imagem \textbf{baboon.pgm} possui um alto nível de detalhes, não é possível observar uma diferença significativa entre as duas formas de difundir o erro de cada \textit{pixel}.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.19]{figures/baboon_h.png}
-	\includegraphics[scale=.19]{figures/butterfly_h.png}
-\caption{Resultado da expressão $\sqrt{(h_{3})^{2} + (h_{4})^{2}}$.} \label{gdimotes}
+	\includegraphics[height=3cm]{figures/fiducial_floyd_order1.png}
+	\includegraphics[height=3cm]{figures/fiducial_floyd_order2.png}
+\caption{Aplicação a técnica de pontilhado com difusão de erros percorrendo a imagem \textbf{fiducial.pgm} das duas formas.} \label{fiducialfloyd}
 \end{center}
 \end{figure}
 
-Como resultado da combinação, somando-se as respostas de cada um filtros por meio da expressão $\sqrt{(h_{3})^{2} + (h_{4})^{2}}$ temos uma imagem que equilibra a detecção de bordas na vertical, obtidas com a aplicação do filtro $h_{3}$, e a detecção de bordas na horizontal, obtidas com a aplicação do filtro $h_{4}$. Os componentes que estão elevados ao quadrado tem como objetivo a atenuação das componentes de alta intensidade, assim, com a operação de radiciação, obtemos um grau de combinação entre as linhas verticais e horizontais.
-
-Os resultados obtidos na execução dos códigos da \textbf{seção 1.2} estão a seguir:
+Na Figura~\ref{fiducialfloyd}, podemos observar que muitas regiões da primeira imagem possui algumas falhas, como conjuntos de \textit{pixels} pretos em locais que era para ter \textit{pixels} brancos, e vice-versa. Já na segunda imagem vemos que muitas das áreas defeituosas na primeira imagem estão consertadas aplicando a técnica de difusão de erro percorrendo de forma alternada, pois os erros são propagados nas direções esquerda-direita e direita-esquerda.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=.17]{figures/baboon_mag_spec_4.png}
-	\includegraphics[scale=.17]{figures/baboon_gau_filter_4.png}
-	\includegraphics[scale=.17]{figures/baboon_mag_filter_4.png}
-	\includegraphics[scale=.17]{figures/baboon_result_4.png}
-\caption{Resultados obtidos com o sigma valendo 4.} \label{mag_4}
+	\includegraphics[height=3cm]{figures/monarch_floyd_order1.png}
+	\includegraphics[height=3cm]{figures/monarch_floyd_order2.png}
+\caption{Aplicação a técnica de pontilhado com difusão de erros percorrendo a imagem \textbf{monarch.pgm} das duas formas.} \label{monarchfloyd}
 \end{center}
 \end{figure}
 
-Na Figura~\ref{mag_4} temos, na primeira imagem, o espectro de magnitude gerado após a aplicação da \textit{Transformada Discreta de Fourier} na imagem e a componente de frequência zero ser transladada para o centro da imagem. Na segunda imagem da primeira linha temos a visualização gráfica de um filtro gaussiano com média 0 e desvio padrão de valor 4, como o filtro é do tamanho da imagem, os intensidades visíveis estão agrupadas em um circulo bem pequeno no centro da imagem, por conta do baixo valor de desvio padrão. Na primeira imagem da segunda linha temos o resultado da aplicação do filtro gaussiano no espectro de frequência da imagem \textit{baboon.png}. Como o filtro em questão possui um baixo valor de desvio padrão, então ao ser aplicado pelo espectro de frequência, ele deixa passar somente valores correspondentes a sua área. Nesse caso, o espectro de frequência resultante perdeu informações sobre as frequências mais altas (que são as componentes presentes em regiões mais escuras). Por fim, a segunda imagem da segunda linha é o resultado da aplicação da \textit{Transformada Inversa de Fourier}, que transforma a imagem de volta para o domínio espacial. Podemos observar que, como houve a aplicação de um filtro gaussiano com baixo desvio padrão, a imagem resultante possui um borramento alto em comparação com a imagem original.
+Na Figura~\ref{monarchfloyd}, podemos observar que em conjuntos de \textit{pixels} que são limitantes de regiões com difentes intensidades, a aplicação da técnica percorrendo somente no sentido esquerda-direita, esses \textit{pixels} tendem a ficar mais visíveis, porém, percorrendo de maneira alternada, as regiões de fronteiras tendem a ficar menos abruptas.
 
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.17]{figures/baboon_mag_spec_32.png}
-	\includegraphics[scale=.17]{figures/baboon_gau_filter_32.png}
-	\includegraphics[scale=.17]{figures/baboon_mag_filter_32.png}
-	\includegraphics[scale=.17]{figures/baboon_result_32.png}
-\caption{Resultados obtidos com o sigma valendo 32.} \label{mag_32}
-\end{center}
-\end{figure}
-
-Na Figura~\ref{mag_32} temos a mesma ordem da figura anterior, porém, nesse caso, o valor de desvio padrão aplicado foi de 32. Podemos ver que o filtro possui uma circunferência bem maior e que, assim, após a aplicação desse filtro no espectro de frequência da imagem original, o espectro de frequência resultante possui mais componentes de frequências mais altas do que a anterior. Portanto, após a aplicação da função inversa, vemos que a imagem resultante possui somente um leve borramento, pois seu espectro tinha mais informações.
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.17]{figures/baboon_mag_spec_64.png}
-	\includegraphics[scale=.17]{figures/baboon_gau_filter_64.png}
-	\includegraphics[scale=.17]{figures/baboon_mag_filter_64.png}
-	\includegraphics[scale=.17]{figures/baboon_result_64.png}
-\caption{Resultados obtidos com o sigma valendo 64.} \label{mag_64}
-\end{center}
-\end{figure}
-
-Por fim, na Figura~\ref{mag_64} temos um filtro gaussiano com desvio padrão valendo 64. Podemos observar que o filtro ficou bem mais abrangente, em relação aos anteriores, e que sua aplicação no espectro de frequência deixou passar componentes de frequências bem mais altas, que resultam em mais informações para a reconstrução da imagem inicial. Como resultado final, vemos que a imagem possui um grau de detalhes bem maior que os resultados anteriores e que já é bem mais próxima da imagem original.
-
-Portanto, com esses resultados podemos observar que quanto maior o filtro gaussiano, mais informações do espectro de frequência vão ser liberados e, assim, na aplicação da \textit{Transformação Inversa de Fourier}, a função terá bem mais informações para a resconstrução da imagem original. Quanto mais informações no espectro de frequência resultante, mais próximo da imagem original é o resultante e, analogamente, quanto menos informações no espectro de frequência resultante, mais distante (mais borrado) da imagem original é o resultado.
+Com esses experimentos, podemos destacar a aplicação da técnica de difusão de erros de maneiras alternada obteve melhor resultado do que difudindo o erro somente em um sentido.
 
 %------------------------------------------------
 
 \section{Conclusão}
 
-Podemos concluir que os resultados obtidos na \textbf{seção 1.1} e na \textbf{seção 1.2} foram satisfatórios quanto a especificação do trabalho e que a visualização prática dos tipos de filtros (passa-alta e passa-baixa), aplicação de filtros no domínio de frequência, mudanças de domínios das imagens e combinação de resultados, consolida ainda mais os conceitos vistos em sala de aula.
+Podemos concluir que os resultados obtidos com as aplicações das técnicas de pontilhado ordenado e pontilhado com difusão de erro foram satisfatórios quanto a especificação do trabalho e que a visualização prática da normalização da imagem, transformação para intensidade binária e transformações com pontilhados nas imagens consolida ainda mais os conceitos vistos em sala de aula.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -439,76 +366,20 @@ Podemos concluir que os resultados obtidos na \textbf{seção 1.1} e na \textbf{
 
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
 
-\bibitem{b1} Welcome to opencv documentation! \href{https://docs.opencv.org/2.4/index.html}{https://docs.opencv.org/2.4/index.html} Acesso em: 15/04/2019.
+\bibitem{b1} Welcome to opencv documentation! \href{https://docs.opencv.org/2.4/index.html}{https://docs.opencv.org/2.4/index.html} Acesso em: 04/05/2019.
 
 \bibitem{b2} Pedrini, Hélio, and William Robson Schwartz. Análise de imagens digitais: princípios, algoritmos e aplicações. Thomson Learning, 2008.
 
-\bibitem{b3} Matplotlib Version 3.0.3 \href{https://matplotlib.org/contents.html}{https://matplotlib.org/contents.html} Acesso em: 15/04/2019.
+\bibitem{b3} Matplotlib Version 3.0.3 \href{https://matplotlib.org/contents.html}{https://matplotlib.org/contents.html} Acesso em: 04/05/2019.
+
+\bibitem{b4} SAWP, Dithering \href{http://www.sawp.com.br/blog/?p=940}{http://www.sawp.com.br/blog/?p=940} Acesso em: 04/05/2019.
+
+\bibitem{b5} Digital Image Processing Using Python \href{https://ckpytsan.wordpress.com/2011/01/14/dithering-parte-iii-dithering-com-difusao-de-erro-e-o-algoritmo-de-floyd-steinberg/}{https://ckpytsan.wordpress.com/2011/01/14/dithering-parte-iii-dithering-com-difusao-de-erro-e-o-algoritmo-de-floyd-steinberg/} Acesso em: 04/05/2019.
+
+\bibitem{b6} Wikipedia: Floyd–Steinberg dithering \href{https://en.wikipedia.org/wiki/Floyd-Steinber_dithering}{https://en.wikipedia.org/wiki/Floyd-Steinber_dithering} Acesso em: 04/05/2019.
  
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
-
-\section*{Anexos}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.19]{figures/butterfly_mag_spec_2.png}
-	\includegraphics[scale=.19]{figures/butterfly_gau_filter_2.png}
-	\includegraphics[scale=.19]{figures/butterfly_mag_filter_2.png}
-	\includegraphics[scale=.19]{figures/butterfly_result_2.png}
-\caption{Resultados obtidos com o sigma valendo 2.} \label{mag_64}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.19]{figures/butterfly_mag_spec_4.png}
-	\includegraphics[scale=.19]{figures/butterfly_gau_filter_4.png}
-	\includegraphics[scale=.19]{figures/butterfly_mag_filter_4.png}
-	\includegraphics[scale=.19]{figures/butterfly_result_4.png}
-\caption{Resultados obtidos com o sigma valendo 4.} \label{mag_64}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.19]{figures/butterfly_mag_spec_8.png}
-	\includegraphics[scale=.19]{figures/butterfly_gau_filter_8.png}
-	\includegraphics[scale=.19]{figures/butterfly_mag_filter_8.png}
-	\includegraphics[scale=.19]{figures/butterfly_result_8.png}
-\caption{Resultados obtidos com o sigma valendo 8.} \label{mag_64}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.19]{figures/butterfly_mag_spec_16.png}
-	\includegraphics[scale=.19]{figures/butterfly_gau_filter_16.png}
-	\includegraphics[scale=.19]{figures/butterfly_mag_filter_16.png}
-	\includegraphics[scale=.19]{figures/butterfly_result_16.png}
-\caption{Resultados obtidos com o sigma valendo 16.} \label{mag_64}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.19]{figures/butterfly_mag_spec_32.png}
-	\includegraphics[scale=.19]{figures/butterfly_gau_filter_32.png}
-	\includegraphics[scale=.19]{figures/butterfly_mag_filter_32.png}
-	\includegraphics[scale=.19]{figures/butterfly_result_32.png}
-\caption{Resultados obtidos com o sigma valendo 32.} \label{mag_64}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-	\includegraphics[scale=.19]{figures/butterfly_mag_spec_64.png}
-	\includegraphics[scale=.19]{figures/butterfly_gau_filter_64.png}
-	\includegraphics[scale=.19]{figures/butterfly_mag_filter_64.png}
-	\includegraphics[scale=.19]{figures/butterfly_result_64.png}
-\caption{Resultados obtidos com o sigma valendo 64.} \label{mag_64}
-\end{center}
-\end{figure}
 
 \end{document}
