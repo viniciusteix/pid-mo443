@@ -1,0 +1,466 @@
+PWD /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.tex
+OUTPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.log
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/abstract/abstract.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/abstract/abstract.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
+INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.aux
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.aux
+OUTPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.aux
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplx.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplx.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+OUTPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.out
+OUTPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.pdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplrc9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplri9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7v.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri9e.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplri9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/entrada.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/entrada.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/entrada.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/filtro.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/filtro.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/filtro.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/resultado.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/resultado.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/resultado.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/mult1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/mult1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/mult1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/multi5.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/multi5.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/multi5.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/mult9.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/mult9.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/mult9.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h2.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/h4.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/sequencia_fourier.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/sequencia_fourier.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/sequencia_fourier.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/filtro_gaussiano.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/filtro_gaussiano.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/filtro_gaussiano.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h1.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h1.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h3.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_h.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_h.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_4.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7v.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_spec_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_gau_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_mag_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/baboon_result_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_2.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_4.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_8.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_16.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_32.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_spec_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_gau_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_mag_filter_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/figures/butterfly_result_64.png
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.aux
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.out
+INPUT /home/vinicius/Dropbox/Mestrado - IC-UNICAMP/1st Semester/Introduction to Digital Image Processing/pid-mo443/trabalho02/relatorio/article_2.out
+INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
