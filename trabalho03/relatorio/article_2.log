@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.13)  19 MAY 2019 19:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.13)  21 MAY 2019 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,7 +996,7 @@ Underfull \hbox (badness 1616) in paragraph at lines 139--140
 
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 146.
-<figures/bitmap.png, id=34, 2241.37375pt x 1379.1525pt>
+<figures/bitmap.png, id=50, 2241.37375pt x 1379.1525pt>
 File: figures/bitmap.png Graphic file (type png)
 <use figures/bitmap.png>
 Package pdftex.def Info: figures/bitmap.png  used on input line 154.
@@ -1024,59 +1024,130 @@ Underfull \hbox (badness 1603) in paragraph at lines 180--181
 []\T1/pplx/m/n/10 (+20) Nas ope-ra-ções fun-da-men-tais de mor-fo-
  []
 
+[2 <./figures/bitmap.png>]
+<figures/bitmap_not.png, id=88, 2241.37375pt x 1379.1525pt>
+File: figures/bitmap_not.png Graphic file (type png)
+<use figures/bitmap_not.png>
+Package pdftex.def Info: figures/bitmap_not.png  used on input line 243.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+<figures/step_1.png, id=90, 2241.37375pt x 1379.1525pt>
+File: figures/step_1.png Graphic file (type png)
+<use figures/step_1.png>
+Package pdftex.def Info: figures/step_1.png  used on input line 252.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+<figures/step_2.png, id=92, 2241.37375pt x 1379.1525pt>
+File: figures/step_2.png Graphic file (type png)
+<use figures/step_2.png>
+Package pdftex.def Info: figures/step_2.png  used on input line 261.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
 
-Underfull \hbox (badness 6110) in paragraph at lines 215--216
+Underfull \vbox (badness 3417) has occurred while \output is active []
+
+ [3 <./figures/bitmap_not.png (PNG copy)> <./figures/step_1.png (PNG copy)>]
+<figures/step_3.png, id=103, 2241.37375pt x 1379.1525pt>
+File: figures/step_3.png Graphic file (type png)
+<use figures/step_3.png>
+Package pdftex.def Info: figures/step_3.png  used on input line 270.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+<figures/step_4.png, id=105, 2241.37375pt x 1379.1525pt>
+File: figures/step_4.png Graphic file (type png)
+<use figures/step_4.png>
+Package pdftex.def Info: figures/step_4.png  used on input line 279.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<figures/step_5.png, id=108, 2241.37375pt x 1379.1525pt>
+File: figures/step_5.png Graphic file (type png)
+<use figures/step_5.png>
+Package pdftex.def Info: figures/step_5.png  used on input line 288.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+<figures/step_6.png, id=110, 2241.37375pt x 1379.1525pt>
+File: figures/step_6.png Graphic file (type png)
+<use figures/step_6.png>
+Package pdftex.def Info: figures/step_6.png  used on input line 297.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./figures/step_2.png (PNG copy)> <./figures/step_3.png (PNG copy)> <./figu
+res/step_4.png (PNG copy)> <./figures/step_5.png (PNG copy)>]
+<figures/step_7.png, id=121, 2241.37375pt x 1379.1525pt>
+File: figures/step_7.png Graphic file (type png)
+<use figures/step_7.png>
+Package pdftex.def Info: figures/step_7.png  used on input line 306.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+<figures/step_10_1.png, id=124, 2241.37375pt x 1379.1525pt>
+File: figures/step_10_1.png Graphic file (type png)
+<use figures/step_10_1.png>
+Package pdftex.def Info: figures/step_10_1.png  used on input line 315.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<figures/step_10_2.png, id=127, 2241.37375pt x 1379.1525pt>
+File: figures/step_10_2.png Graphic file (type png)
+<use figures/step_10_2.png>
+Package pdftex.def Info: figures/step_10_2.png  used on input line 324.
+(pdftex.def)             Requested size: 184.95665pt x 113.81102pt.
+ [5 <./figures/step_6.png (PNG copy)> <./figures/step_7.png (PNG copy)> <./figu
+res/step_10_1.png (PNG copy)> <./figures/step_10_2.png (PNG copy)>]
+Underfull \hbox (badness 6110) in paragraph at lines 347--348
 []\T1/pplx/m/n/10 (+20) Welcome to opencv do-cu-men-ta-tion!
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 [][]\T1/pplx/m/n/10 (+12) https://docs.opencv.org/2.4/index.html[][]
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 217--218
+Underfull \hbox (badness 2111) in paragraph at lines 349--350
 []\T1/pplx/m/n/10 (+20) Pedrini, Hé-lio, and Wil-liam Rob-son
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 []\T1/pplx/m/n/10 (+20) Matplotlib Ver-sion 3.0.3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 [][]\T1/pplx/m/n/10 (+20) https://matplotlib.org/contents.html[][]
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-[2 <./figures/bitmap.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 357.
+[6
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 357.
  (./article_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 357.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 357.
 Package rerunfilecheck Info: File `article_2.out' has not changed.
-(rerunfilecheck)             Checksum: 0A58CB3B5C11B252A8C140CBD276E2BB;396.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
+(rerunfilecheck)             Checksum: ABCD72900E0CF18BE37C5709654DF243;682.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 357.
  ) 
 Here is how much of TeX's memory you used:
- 11844 strings out of 492982
- 179157 string characters out of 6134896
- 315054 words of memory out of 5000000
- 15003 multiletter control sequences out of 15000+600000
- 56193 words of font info for 200 fonts, out of 8000000 for 9000
+ 12042 strings out of 492982
+ 181767 string characters out of 6134896
+ 316054 words of memory out of 5000000
+ 15072 multiletter control sequences out of 15000+600000
+ 62672 words of font info for 275 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,11n,43p,496b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,591b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
-latino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on article_2.pdf (2 pages, 193259 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pal
+atino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on article_2.pdf (6 pages, 1023014 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
- 46654 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 46736 words of extra memory for PDF output out of 51595 (max. 10000000)
 

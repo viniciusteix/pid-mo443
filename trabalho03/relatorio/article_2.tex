@@ -188,23 +188,155 @@ No passo (9), a regra utilizada para classificar um \textit{bounding box} como t
 
 \section{Fundamentação}
 
+\subsection{Morfologia Matemática}
+
+A morfologia matemática se refere ao estudo e análise de imagens usando operadores não lineares. Dentre as atividades que a morfologia executa no processamento de imagens estão: aumento de qualidade, restauração, detecção de falhas, análise da textura, análise particular, análise de formas, compreensão, dentre outras. Essas ferramentas são aplicadas em diversas áreas como visão em robos, inspeções, microscopia, biologia, metalurgia e documentos digitais. Ambas áreas e técnicas continuam a se expandir.
+
+O processo da morfologia se baseia na geometria, em um contexto bem específico. A idéia básica é percorrer uma imagem com um elemento estruturante e quantificar a maneira com que este se encaixa ou não na imagem. No caso afirmativo, marca-se o local ou nível de cinza onde o elemento estruturante coube na imagem. Dessa forma, pode-se extrair informações relevantes sobre o tamanho e forma de estruturas na imagem.
+
+\subsubsection{Dilatação}
+
+A operação de dilatação entre o conjunto $A$ e o elemento estruturante $B$ é definida como a \textit{adição de Minkowski}, ou seja
+
+\begin{equation}
+	\mathcal{D}(A,B) = A \oplus B = \bigcup_{b \in B} (A + b).
+\end{equation}
+
+O processo de dilatação entre $A$ e $B$ corresponde ao conjunto de todas as translações de $B$ com os pontos da imagem em que há pelo menos um elemento não nulo (pixel com valor 1) em comum com o conjunto A.
+
+\subsubsection{Erosão}
+
+A operação de erosão entre o conjunto $A$ e o elemento estruturante $B$ é definida como a subtração de \textit{Minkowski}, ou seja
+
+\begin{equation}
+	\mathcal{E}(A,B) = A \ominus B = \bigcap_{b \in B} (A - b).
+\end{equation}
+
+A erosão de $A$ por $B$ é o conjunto de todos os elementos de $B$ transladados por $p$ que estão contidas em $A$. Entretanto, deve-se observar que o resultado da erosão de uma imagem pode não ser um subconjunto de imagem original, caso o elemento estruturante não contenha a origem.
+
+\subsubsection{Fechamento}
+
+O fechamento de $A$ por $B$, denotado por $A \bullet B$, é definido como
+
+\begin{equation}
+	A \bullet B = (A \oplus B) \ominus B
+\end{equation}
+
+o qual pode ser interpretado geometricamente como a união de todas as translações de $B$ que não estão contidas em $A$.
 
 %------------------------------------------------
 
 \section{Saída de Dados}
 
+As imagens resultantes foram salvas dentro da pasta \textbf{resultados/} utilizando uma função da biblioteca \textbf{opencv} chamada \textbf{cv2.imwrite()} \cite{b1}.
+
+O formato dos nomes de saída estão da seguinte forma: para cada passo do problema, é salva uma imagem com o nome ''bitmap\_(passo)'', e no passo número 10 é uma imagem referente a todos os componentes conexos e outra somente com os componentes que foram classificados como palavras.
 
 %------------------------------------------------
 
 \section{Resultados e Discuções}
 
+Os resultados obtidos com a aplicação do passo a passo definido no problema estão a seguir:
 
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/bitmap_not.png}
+\caption{bitmap\_not.pbm} \label{bitmap_not}
+\end{center}
+\end{figure}
+
+Primeiramente, para a aplicação das operação básicas de morfologia matemática, a imagem de entrada foi transformada em ''negativa''. Os \textit{pixels} que tinham o valor $255$ passaram a ter valor $0$ e os \textit{pixels} que tinham valor $0$ passaram a ter o valor $255$. O resultado dessa operação é mostrado na Figura~\ref{bitmap_not}.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_1.png}
+\caption{Passo (1)} \label{step_1}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_1} apresenta o resultado da dilatação da imagem original com um elemento estruturante de 1 \textit{pixel} de altura e 100 \textit{pixels} de largura. Como resultado temos uma imagem em que os componentes foram alargados e alguns foram unidos, formando um componente conexo mais abrangente. Podemos observar os componentes que estavam separados em uma mesma linha agora estão formando somente um componente. E como o elemento estruturante é maior na horizontal, podemos observar que os componentes tiveram sua largura aumentada.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_2.png}
+\caption{Passo (2)} \label{step_2}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_2} apresenta o resultado da erosão da imagem da Figura~\ref{step_1} com o mesmo elemento estruturante do passo (1). Podemos observar que com essa operação de erosão a imagem sofreu um redução na parte externa das componentes conexas, assim é possível fazer uma analogia com um ''afinamento'' dessas componentes. Com esse passo, podemos ver também que o espaçamento entre as linhas ficou mais bem definido.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_3.png}
+\caption{Passo (3)} \label{step_3}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_3} apresenta o resultado da dilatação da imagem original com o elemento estruturante de 200 \textit{pixels} de altura e 1 \textit{pixel} de largura. Podemos observar que a imagem sofreu um alargamento das componentes na vertical, resultando assim na união de muitos componentes.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_4.png}
+\caption{Passo (4)} \label{step_4}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_4} apresenta o resultado da erosão da imagem da Figura~\ref{step_3} com o mesmo elemento do passo (3). Podemos observar que ocorreu a remoção de uma camada externa dos componentes conexos, e os componentes que não ocupavam uma área considerável foram ''excluídos''.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_5.png}
+\caption{Passo (5)} \label{step_5}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_5} apresenta o resultado da operação de \textit{AND} entre a imagem obtida após o passo (2) e o passo (4). Com essa operação, a imagem resultante mantém os \textit{pixels} que tinham o valor $255$ nas duas imagens, assim, a imagem resultante mantém a divisão por linhas e ainda separações entre componentes de uma mesma linha, obtidas através da imagem do passo (4).
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_6.png}
+\caption{Passo (6)} \label{step_6}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_6} apresenta o resultado da operação de fechamento da imagem da Figura~\ref{step_5} com um elemento estruturante de 1 \textit{pixel} de altura e 30 \textit{pixels} de largura. Como a operação de fechamento faz uma dilatação seguida de uma erosão, essa operação tem como objetivo ''fechar'' os buracos que possam existir nos componentes. Podemos observar que os componentes de uma mesma linha que estavam separados foram unidos, assim, no passo (7) é possível fazer uma boa identificação dos componentes conexos.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_7.png}
+\caption{Passo (7)} \label{step_7}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_7} apresenta o resultado da operação de detecção dos componentes conexos. Podemos observar que cada componente conexo existente na imagem da Figura~\ref{step_6} foi envolvido com um \textit{bounding box}. Para a identificação dos componentes conexos foi considerado a vizinhaça-4.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_10_1.png}
+\caption{Passo (10.1)} \label{step_10_1}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_10_1} apresenta o resultado da identificação dos componentes conexos e seus \textit{bounding boxex} correspondentes após a execução de 3 iterações da dilatação da imagem da Figura~\ref{bitmap_not} com um elemento estruturante de 1 \textit{pixel} de altura e 3 \textit{pixels} de largura.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=4cm]{figures/step_10_2.png}
+\caption{Passo (10.2)} \label{step_10_2}
+\end{center}
+\end{figure}
+
+A Figura~\ref{step_10_2} apresenta o resultado da operação realizada na figura anterior, porém, só foram desenhados os \textit{bounding boxex} dos componentes que foram classificados como texto, de acordo com os resultados obtidos no passo (8.a) e (8.b) e a regra definida anteriormente. Assim, essa figura representa os componentes que foram reconhecidos como palavras.
+
+A contagem do número de linhas e palavras foi realizada da seguinte forma: (i) a contagem de linhas foi realizada com base na imagem da Figura~\ref{step_7} e foram contabilizados somente os componentes que foram classificados como texto; (ii) a contagem de palavras foi realizada com base na imagem da Figura~\ref{step_10_2} e foram contabilizados todos \textit{bounding boxex} que foram classificados como texto.
+
+Como resultado final temos que o número de linhas é 36 e o número de palavras é 305.
 
 %------------------------------------------------
 
 \section{Conclusão}
 
-
+Podemos concluir que os resultados obtidos com as aplicações das técnicas de morfologia matemática para a detecção de linhas e palavras foram satisfatórios quanto a especificação do trabalho e que a criação de uma regra para classificação de texto e não texto com base nos cálculos do passo (8.a) e (8.b) se mostrou razoável para este objetivo, assim, consolida ainda mais os conceitos vistos em sala de aula.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
