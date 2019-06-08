@@ -63,7 +63,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{MO443 $\bullet$ Maio 2019 $\bullet$ Relatório 03} % Custom header text
+\fancyhead[C]{MO443 $\bullet$ Junho 2019 $\bullet$ Relatório 04} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -83,7 +83,7 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Relatório - Trabalho 03 \\ \Large MO443 - Introdução ao Processamento de Imagem Digital} %
+\title{Relatório - Trabalho 04 \\ \Large MO443 - Introdução ao Processamento de Imagem Digital} %
 %\subtitle{qsdqwdqwd} %Article title
 \author{%
 \textsc{Vinicius Teixeira de Melo - RA: 230223} \\[1ex] % Your name
@@ -114,45 +114,60 @@
 
 \section{Especificação do Problema}
 
-O objetivo deste trabalho é aplicar operadores morfológicos para segmentar regiões compreendendo texto e
-não texto em uma imagem de entrada.
+O objetivo deste trabalho é aplicar técnicas de detecção de pontos de interesse para registrar um par de imagens e criar uma imagem panorâmica formado pela ligação entre as imagens após sua correspondência.
 
-Os seguintes passos devem ser realizados:
+Os principais passos do processo de correspondência e geração da imagem panorâmica são:
 
 \begin{enumerate}
-	\item dilatação da imagem original com um elemento estruturante de 1 pixel de altura e 100 pixels de largura;
-	\item erosão da imagem resultante com o mesmo elemento estruturante do passo (1);
-	\item dilatação da imagem original com um elemento estruturante de 200 pixels de altura e 1 pixel de largura;
-	\item erosão da imagem resultante com o mesmo elemento estruturante do passo (3);
-	\item aplicação da intersecção (AND) dos resultados dos passos (2) e (4);
-	\item fechamento do resultado obtido no passo (5) com um elemento estruturante de 1 pixel de altura e 30
-pixels de largura;
-	\item aplicação de algoritmo para identificação de componentes conexos (ver programa fornecido) sobre o
-resultado do passo (6);
-	\item para cada retângulo envolvendo um objeto, calcule:
-	\begin{enumerate}
-		\item razão entre o número de pixels pretos e o número total de pixels (altura x largura);
-		\item razão entre o número de transições verticais e horizontais branco para preto e o número total de pixels pretos;
-	\end{enumerate}
-	\item criação de uma regra para classificar cada componente conexo, de acordo com as medidas obtidas no
-passo (8), como texto e não texto.
-	\item aplicação de operadores morfológicos apropriados para segmentar cada linha do texto em blocos de palavras. Coloque um retângulo envolvendo cada palavra na imagem original. Calcule o número total de linhas de texto e de blocos de palavras na imagem.
+	\item converter as imagens coloridas de entrada em imagens de níveis de cinza;
+	\item encontrar pontos de interesse e descritores invariantes locais para o par de imagens;
+	\item computar distâncias (similaridades) entre cada descritor das duas imagens;
+	\item selecionar as melhores correspondências para cada descritor de imagem;
+	\item executar a técnica \textit{RANSAC} (\textit{RANdom SAmple Consensus}) para estimar a matriz de homografia (\textit{cv2.findHomography}).
+	\item aplicar uma projeção de perspectiva (\textit{cv2.warpPerspective}) para alinhar as imagens;
+	\item unir as imagens alinhadas e criar a imagem panorâmica;
+	\item desenhar retas entre pontos correspondentes no par de imagens.
 \end{enumerate}
+
+No passo (2), é necessário explorar e comparar diferentes detectores de pontos de interesse e descritores, tais como \textit{SIFT} (\textit{Scale Invariant Feature Transform}), \textit{SURF} (\textit{Speed Up Robust Feature}), \textit{BRIEF} (\textit{Robust Independent Elementary Features}) e \textit{ORB} (\textit{Oriented FAST, Rotated BRIEF}). No passo (4), uma correspondência será considerada se o limiar definido estiver acima de um valor especificado pelo usuário. No passo (5), o cálculo da matriz de homografia requer o uso de, no mínimo, 4 pontos de correspondência.
+
+A fundamentação e resolução deste trabalho estão descritar nas seções seguintes.
 
 %------------------------------------------------
 
 \section{Entrada de Dados}
 
-O código fonte criado para a execução de todas as tarefas está no notebook \textbf{Trabalho 03.ipynb}. O código foi criado para aceitar imagens em preto e branco no formato PBM (\textit{Portable Bitmap}).
+O código fonte criado para a execução de todas as tarefas está no notebook \textbf{Trabalho 04.ipynb}. O código foi criado para aceitar imagens coloridas ou em escala de cinza em diversos formatos, como exemplo: \textit{PNG} (\textit{Portable Network Graphics}), \textit{JPG} (\textit{Joint Photographic Group}), entre outros.
 
-Para executar o notebook, basta iniciar o ambiente \textit{Jupyter Notebook}, abrir o notebook \textbf{Trabalho 03.ipynb} e executar as células em ordem. Todo o algoritmo foi implementado na linguagem Python na versão 3.6.
+Para executar o notebook, basta iniciar o ambiente \textit{Jupyter Notebook}, abrir o notebook \textbf{Trabalho 04.ipynb} e executar as células em ordem. Todo o algoritmo foi implementado na linguagem Python na versão 3.6.
 
-As imagen de entrada utilizada no teste do algoritmo foi retirada da página do prof. Hélio Pedrini: \href{http://www.ic.unicamp.br/~helio/imagens_morfologia/}{Imagens}. Na pasta \textbf{imgs/} está a imagem em preto e branco utilizada no teste: \textbf{bitmap.pbm}. As dimensões da imagen de entrada utilizada é 1374 x 2233.
+As imagens de entrada utilizadas nso testes dos algoritmos foram retiradas da página do prof. Hélio Pedrini: \href{http://www.ic.unicamp.br/~helio/imagens_registro/}{Imagens}. Na pasta \textbf{imgs/} estão as imagens coloridas utilizadas nos testes: \textbf{foto1A.jpg} (1024 x 683 \textit{pixels}), \textbf{foto1B.jpg} (1024 x 683 \textit{pixels}), \textbf{foto3A.jpg} (640 x 427 \textit{pixels}) e \textbf{foto3B.jpg} (640 x 427 \textit{pixels}).
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/bitmap.png}
-\caption{bitmap.pbm} \label{gdimotes}
+	\includegraphics[height=3.6cm]{figures/foto1A.jpg}
+\caption{foto1A.jpg} \label{foto1A}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=3.6cm]{figures/foto1B.jpg}
+\caption{foto1B.jpg} \label{foto1B}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=3.6cm]{figures/foto3A.jpg}
+\caption{foto3A.jpg} \label{foto3A}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=3.6cm]{figures/foto3B.jpg}
+\caption{foto3B.jpg} \label{foto3B}
 \end{center}
 \end{figure}
 
@@ -163,6 +178,7 @@ As imagen de entrada utilizada no teste do algoritmo foi retirada da página do 
 As bibliotecas utilizadas neste trabalho foram:
 
 \begin{table}[H]
+\begin{center}
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Biblioteca} & \textbf{Versão} \\ \hline
@@ -171,66 +187,63 @@ cv2                 & 3.4.2           \\ \hline
 matplotlib          & 3.0.3           \\ \hline
 warnings            & 2.1             \\ \hline
 \end{tabular}
+\end{center}
 \end{table}
 
-A leitura das imagens foi realizada utilizando uma função do \textbf{opencv} \cite{b1} chamada \textbf{imread()}, a qual necessitou de uma constante do próprio \textbf{opencv} para que a imagem ficassem apenas com o canal de escala de cinza, essa constante é denominada \textbf{IMREAD\_GRAYSCALE}.
+A leitura das imagens foi realizada utilizando uma função do \textbf{matplotlib} \cite{b3} chamada \textbf{pyplot.imread()}, a qual nescessita apenas do caminho da imagem, já que queremos as informações das imagens assim como estão.
 
-Os elementos estruturantes foram criados manualmente através da função \textbf{np.ones((\textit{shape}),np.uint8)}. Primeiramente, a imagem de entrada foi transformada para que as áreas de interesse estivessem com valor $255$. Para as operações de \textit{bits}, foram utilizadas as funções \textbf{cv2.bitwise\_not} e \textbf{cv2.bitwise\_and}.
+Foi criada uma função para plotar os resultados intermediários e finais utilizando também uma função do \textbf{matplotlib} chamada \textbf{pyplot.imshow()}. No passo (1) da descrição do trabalho foi utilizada uma função do \textbf{opencv} \cite{b1}, denominada \textbf{cv2.cvtColor()}, para transformar a imagem lida inicialmente em uma imagem em escala de cinza, para isso foi necessário a utilização da constante \textbf{cv2.COLOR\_BGR2GRAY}.
 
-Nas operações fundamentais de morfologia foram utilizadas com base nas funções \textbf{cv2.dilate} e \textbf{cv2.erose}. Para a operação de fechamento, foi utilizada a função \textbf{cv2.morphologyEx} com a constante do próprio OpenCv, chamada \textbf{cv2.MORPH\_CLOSE}.
+Para a utilização dos descritores pedidos no trabalho, foram utilizadas as funções do próprio \textbf{opencv}: \textit{SIFT} \textbf{cv2.xfeatures2d.SIFT\_create()}, \textit{SURF} \textbf{cv2.xfeatures2d.SURF\_create()}, \textit{BRIEF} \textbf{cv2.xfeatures2d.BriefDescriptorExtractor\_create()} e \textit{ORB} \textbf{cv2.ORB\_create()}.
 
-No passo (7), para a detecção de componentes e criação dos \textit{bounding boxes} foi utilizada a função \textbf{cv2.findContours}, juntamente com as constantes \textbf{cv2.RETR\_TREE} e \textbf{cv2.CHAIN\_APPROX\_SIMPLE}. Assim, após a obtenção dos \textit{bounding boxes}, foram utilizadas as funções \textbf{cv2.boundingRect}, \textbf{cv2.rectangle} e \textbf{cv2.drawContours} para desenhar os \textit{bounding boxes} na imagem de entrada.
+No passo (3) e (4), como é necessário calcular a distância entre os \textit{keypoints} da imagens em questão e  utilizar somente os pontos que possuem uma melhor correspondência, utilizamos a função do \textbf{opencv} \textbf{knnMatch()} para fazer esse cálculo e uma taxa de $0.8$ para termos os pares de pontos que possuem correspondência válida.
 
-No passo (9), a regra utilizada para classificar um \textit{bounding box} como texto ou não foi: dado o valor $x_{a}$ obtido no passo (8.a) e o valor $x_{b}$ obtido no passo (8.b) referentes ao mesmo \textit{bounding box}, se $|x_{a} - x_{b}| \leq 0.2$, esse \textit{bounding box} é classificado como texto, se não, é classificado como não texto.
+No passo (5) é necessário o cálculo da matriz de homografia, como já sugerido na descrição, utilizamos a função \textbf{cv2.findHomography()} com a técnica \textit{RANSAC} (\textbf{cv2.RANSAC}) e um limiar de $4.0$. Para o cálculo da projeção de perspectiva foi utilizada a função \textbf{cv2.warpPerspective()} e, por fim, foram desenhadas as retas entre cada par de pontos que possuem uma maior similaridade.
 
 
 %------------------------------------------------
 
 \section{Fundamentação}
 
-\subsection{Morfologia Matemática}
+\subsection{Descritores}
 
-A morfologia matemática se refere ao estudo e análise de imagens usando operadores não lineares. Dentre as atividades que a morfologia executa no processamento de imagens estão: aumento de qualidade, restauração, detecção de falhas, análise da textura, análise particular, análise de formas, compreensão, dentre outras. Essas ferramentas são aplicadas em diversas áreas como visão em robos, inspeções, microscopia, biologia, metalurgia e documentos digitais. Ambas áreas e técnicas continuam a se expandir.
+Dada um imagem qualquer, pontos de interesse de um objeto pertencente a imagem podem ser extraídos para que se tenha uma descrição de características desse objeto. A seguir estão as descrições dos descritores utilizados nesse trabalho.
 
-O processo da morfologia se baseia na geometria, em um contexto bem específico. A idéia básica é percorrer uma imagem com um elemento estruturante e quantificar a maneira com que este se encaixa ou não na imagem. No caso afirmativo, marca-se o local ou nível de cinza onde o elemento estruturante coube na imagem. Dessa forma, pode-se extrair informações relevantes sobre o tamanho e forma de estruturas na imagem.
+\subsubsection{SIFT}
 
-\subsubsection{Dilatação}
+O descritor SIFT (\textit{Scale-invariant feature transform}) é um algoritmo de detecção de características em Visão Computacional para detectar e descrever características locais em imagens. Um ponto de interesse SIFT é uma região de imagem circular com uma orientação. Ele é descrito por um quadro geométrico de quatro parâmetros: o centro do ponto-chave coordena $x$ e $y$, sua escala (o raio da região) e sua orientação (um ângulo expresso em radianos). O detector SIFT usa como estruturas de imagem de pontos chave que se assemelham a ''blobs''. Ao procurar por blobs em várias escalas e posições, o detector SIFT é invariante (ou, mais precisamente, covariante) para translação, rotações e redimensionamento da imagem.
 
-A operação de dilatação entre o conjunto $A$ e o elemento estruturante $B$ é definida como a \textit{adição de Minkowski}, ou seja
+\subsubsection{SURF}
 
-\begin{equation}
-	\mathcal{D}(A,B) = A \oplus B = \bigcup_{b \in B} (A + b).
-\end{equation}
+O descritor SURF (\textit{Speeded up robust features}) é um detector e descritor de características locais patenteado. Pode ser usado para tarefas como reconhecimento de objetos, registro de imagens, classificação ou reconstrução 3D.
 
-O processo de dilatação entre $A$ e $B$ corresponde ao conjunto de todas as translações de $B$ com os pontos da imagem em que há pelo menos um elemento não nulo (pixel com valor 1) em comum com o conjunto A.
+Para detectar pontos de interesse, o SURF usa uma aproximação inteira do determinante do detector de \textit{blob Hessian}, que pode ser calculado com 3 operações inteiras usando uma imagem integral pré-calculada. Seu descritor de característica é baseado na soma da resposta da \textit{wavelet Haar} em torno do ponto de interesse. Estes também podem ser calculados com o auxílio da imagem integral.
 
-\subsubsection{Erosão}
+\subsubsection{BRIEF}
 
-A operação de erosão entre o conjunto $A$ e o elemento estruturante $B$ é definida como a subtração de \textit{Minkowski}, ou seja
+O descritor BRIEF (\textit{Binary Robust Independent Elementary Features}) fornece um atalho para encontrar as cadeias binárias diretamente, sem encontrar descritores. Dado uma imagem, ele seleciona um conjunto de pares de localizações $n_{d}(x,y)$ em um único caminho. Então, algumas comparações de intensidade de \textit{pixels} são realizadas nesses pares de localizações. Por exemplo, suponha dois pares de localizações $p$ e $q$, se $I(p) < I(q)$, então o resultado é 1, se não, o resultado é 0. Isso é aplicado para todos os pares de localizações para obter uma string binária $n_{d}-$dimensional. E, assim, realizar os cálculos dos pontos de interesse.
 
-\begin{equation}
-	\mathcal{E}(A,B) = A \ominus B = \bigcap_{b \in B} (A - b).
-\end{equation}
+\subsubsection{ORB}
 
-A erosão de $A$ por $B$ é o conjunto de todos os elementos de $B$ transladados por $p$ que estão contidas em $A$. Entretanto, deve-se observar que o resultado da erosão de uma imagem pode não ser um subconjunto de imagem original, caso o elemento estruturante não contenha a origem.
+O descritor ORB (\textit{Oriented FAST and rotated BRIEF}) é um detector rápido de características locais. É baseado no detector de pontos de interesse FAST e no descritor visual BRIEF. Seu objetivo é fornecer uma alternativa rápida e eficiente para o SIFT.
 
-\subsubsection{Fechamento}
+\subsection{RANSAC}
 
-O fechamento de $A$ por $B$, denotado por $A \bullet B$, é definido como
+RANSAC é uma abreviatura de ''\textit{RANdom SAmple Consensus}''. É um método iterativo para estimar os parâmetros de um modelo matemático \cite{b4}.
 
-\begin{equation}
-	A \bullet B = (A \oplus B) \ominus B
-\end{equation}
+Dado um modelo que requer um mínimo de $n$ pontos para instanciar seus parametros livres, e um conjunto de pontos $P$, tal que o numero de pontos em $P$ é maior que $n$, seleciona randomicamente um subconjunto $S_{1}$ de $n$ pontos de $P$ e instancia o modelo. Usa-se o modelo instanciado $M_{1}$ para determinar o subconjunto $S_{1}*$ de pontos em $P$ que estão dentro de um erro tolerável de $M_{1}$. O conjunto $S_{1}*$ é chamado de conjunto consenso de $S_{1}$.
 
-o qual pode ser interpretado geometricamente como a união de todas as translações de $B$ que não estão contidas em $A$.
+Se o número de elementos de $S_{1}*$ é maior que certo limite $t$, que é função da estimativa do número de erros grosseiros em $P$, usar $S_{1}*$ para computar (possivelmente com Mínimos Quadrados) um novo modelo $M_{1}*$.
+
+Se o número de elementos de $S_{1}*$ é menor do que $t$, seleciona-se randomicamente um novo subconjunto $S_{2}$ e repete-se o processo acima. Se, após um número pré determinado de tentativas, nenhum conjunto consenso com $t$ ou mais membros tiver sido encontrado, ou soluciona-se o modelo com o maior conjunto consenso, ou termina-se com falha.
 
 %------------------------------------------------
 
 \section{Saída de Dados}
 
-As imagens resultantes foram salvas dentro da pasta \textbf{resultados/} utilizando uma função da biblioteca \textbf{opencv} chamada \textbf{cv2.imwrite()} \cite{b1}.
+As imagens resultantes foram salvas dentro da pasta \textbf{resultados/} utilizando uma função da biblioteca \textbf{matplotlib} chamada \textbf{pyplot.imsave()} \cite{b3}.
 
-O formato dos nomes de saída estão da seguinte forma: para cada passo do problema, é salva uma imagem com o nome ''bitmap\_(passo)'', e no passo número 10 é uma imagem referente a todos os componentes conexos e outra somente com os componentes que foram classificados como palavras.
+O formato dos nomes de saída estão da seguinte forma: as imagens que representam as projeções de perspectiva possuem os nomes ''descritor\_persp\_inter\_nomedafoto.jpeg''; as imagens que representam as junções das projeções de perspectiva possuem os nomes ''descritor\_persp\_nomedafoto.jpeg''; e, por fim, as imagens que represenção as projeções de perspectiva com as retas de correspondências desenhadas possuem os nomes ''descritor\_vis\_nomedafoto.jpeg''.
 
 %------------------------------------------------
 
@@ -240,103 +253,117 @@ Os resultados obtidos com a aplicação do passo a passo definido no problema es
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/bitmap_not.png}
-\caption{bitmap\_not.pbm} \label{bitmap_not}
+	\includegraphics[width=7cm]{figures/sift_persp_inter_foto1.jpeg}
+\caption{sift\_persp\_inter\_foto1.jpeg} \label{sift_persp_inter_foto1}
 \end{center}
 \end{figure}
 
-Primeiramente, para a aplicação das operação básicas de morfologia matemática, a imagem de entrada foi transformada em ''negativa''. Os \textit{pixels} que tinham o valor $255$ passaram a ter valor $0$ e os \textit{pixels} que tinham valor $0$ passaram a ter o valor $255$. O resultado dessa operação é mostrado na Figura~\ref{bitmap_not}.
+A Figura~\ref{sift_persp_inter_foto1} apresenta o resultado do passo (6), o qual é necessário aplicar uma projeção de perspectiva para alinhar as imagens. Essa figura mostra como ficou o resultado da imagem que foi transformada com base nos pontos que foram obtidos com o descritor \textit{SIFT}. Podemos destacar que a imagem sofre uma transformação não linear, com uma pequena rotação para que pudesse ficar se assemelhar a continuidade da imagem 1.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_1.png}
-\caption{Passo (1)} \label{step_1}
+	\includegraphics[width=7cm]{figures/surf_persp_inter_foto1.jpeg}
+\caption{surf\_persp\_inter\_foto1.jpeg} \label{surf_persp_inter_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_1} apresenta o resultado da dilatação da imagem original com um elemento estruturante de 1 \textit{pixel} de altura e 100 \textit{pixels} de largura. Como resultado temos uma imagem em que os componentes foram alargados e alguns foram unidos, formando um componente conexo mais abrangente. Podemos observar os componentes que estavam separados em uma mesma linha agora estão formando somente um componente. E como o elemento estruturante é maior na horizontal, podemos observar que os componentes tiveram sua largura aumentada.
+A Figura~\ref{surf_persp_inter_foto1} aprensenta também o resultado obtido após o passo (6), porém, com o descritor \textit{SURF}. Podemos destacar que os resultados foram parecidos com a imagem anterior e que a imagem resultante sofreu, praticamente, as mesmas transformações.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_2.png}
-\caption{Passo (2)} \label{step_2}
+	\includegraphics[width=7cm]{figures/brief_persp_inter_foto1.jpeg}
+\caption{brief\_persp\_inter\_foto1.jpeg} \label{brief_persp_inter_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_2} apresenta o resultado da erosão da imagem da Figura~\ref{step_1} com o mesmo elemento estruturante do passo (1). Podemos observar que com essa operação de erosão a imagem sofreu um redução na parte externa das componentes conexas, assim é possível fazer uma analogia com um ''afinamento'' dessas componentes. Com esse passo, podemos ver também que o espaçamento entre as linhas ficou mais bem definido.
+A Figura~\ref{brief_persp_inter_foto1} apresenta o resultado obtido após o passo (6), mas utilizando os pontos de interesse obtidos com o descritor \textit{BRIEF}. Assim como as duas imagens anteriores, os resultados foram bem semelhantes e sofreram, visualmente, as mesmas transformações.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_3.png}
-\caption{Passo (3)} \label{step_3}
+	\includegraphics[width=7cm]{figures/orb_persp_inter_foto1.jpeg}
+\caption{orb\_persp\_inter\_foto1.jpeg} \label{orb_persp_inter_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_3} apresenta o resultado da dilatação da imagem original com o elemento estruturante de 200 \textit{pixels} de altura e 1 \textit{pixel} de largura. Podemos observar que a imagem sofreu um alargamento das componentes na vertical, resultando assim na união de muitos componentes.
+A Figura~\ref{orb_persp_inter_foto1} mostra o resultado obtido após o passo (6) também, porém, utilizando os pontos de interesse resultantes da aplicação do descritor \textit{ORB}. Podemos observar que a imagem não se assemelha as anteriores, o que é causado pelo fato de o descritor \textit{ORB} ter resultado em uma quantidade consideravelmente diferente de pontos de interesse dos descritores aplicados anteriormente. Assim, essa figura sofreu transformações diferentes, o que vai ficar claro na execução do passo (7).
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_4.png}
-\caption{Passo (4)} \label{step_4}
+	\includegraphics[width=7cm]{figures/sift_persp_foto1.jpeg}
+\caption{sift\_persp\_foto1.jpeg} \label{sift_persp_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_4} apresenta o resultado da erosão da imagem da Figura~\ref{step_3} com o mesmo elemento do passo (3). Podemos observar que ocorreu a remoção de uma camada externa dos componentes conexos, e os componentes que não ocupavam uma área considerável foram ''excluídos''.
+A Figura~\ref{sift_persp_foto1} mostra o resultado da aplicação do passo (7), o qual é necessário unir as imagens alinhadas e criar a imagem panorâmica a partir disso. Podemos observar que o resultado foi satisfatório, as imagens se alinharam muito bem na ''linha de intersecção'' e formaram uma imagem panorâmica assim como é descrito no passo (7). 
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_5.png}
-\caption{Passo (5)} \label{step_5}
+	\includegraphics[width=7cm]{figures/surf_persp_foto1.jpeg}
+\caption{surf\_persp\_foto1.jpeg} \label{surf_persp_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_5} apresenta o resultado da operação de \textit{AND} entre a imagem obtida após o passo (2) e o passo (4). Com essa operação, a imagem resultante mantém os \textit{pixels} que tinham o valor $255$ nas duas imagens, assim, a imagem resultante mantém a divisão por linhas e ainda separações entre componentes de uma mesma linha, obtidas através da imagem do passo (4).
+A Figura~\ref{surf_persp_foto1} apresenta o resultado obtido após a execução do passo (7), mas com a utilização do descritor \textit{SURF}. Podemos destacar que assim como visto nos resultados do passo (6), os descritores \textit{SIFT} e \textit{SURF} descrevam pontos semelhantes e, por tanto, as transformações aplicadas nas imagens também foram parecidos, o que resultou em imagens panorâmicas semelhantes também.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_6.png}
-\caption{Passo (6)} \label{step_6}
+	\includegraphics[width=7cm]{figures/brief_persp_foto1.jpeg}
+\caption{brief\_persp\_foto1.jpeg} \label{brief_persp_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_6} apresenta o resultado da operação de fechamento da imagem da Figura~\ref{step_5} com um elemento estruturante de 1 \textit{pixel} de altura e 30 \textit{pixels} de largura. Como a operação de fechamento faz uma dilatação seguida de uma erosão, essa operação tem como objetivo ''fechar'' os buracos que possam existir nos componentes. Podemos observar que os componentes de uma mesma linha que estavam separados foram unidos, assim, no passo (7) é possível fazer uma boa identificação dos componentes conexos.
+A Figura~\ref{brief_persp_foto1} mostra também o resultado obtido após a execução do passo (7), porém, com a utilização do descritor \textit{BRIEF} para descrever os pontos de interesse nas imagens. Assim como nas duas imagens anteriores, o resultado da imagem panorâmica foi bem parecido, o que reforça a questão dos descritores terem escolhidos pontos de interesse semelhantes.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_7.png}
-\caption{Passo (7)} \label{step_7}
+	\includegraphics[width=7cm]{figures/orb_persp_foto1.jpeg}
+\caption{orb\_persp\_foto1.jpeg} \label{orb_persp_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_7} apresenta o resultado da operação de detecção dos componentes conexos. Podemos observar que cada componente conexo existente na imagem da Figura~\ref{step_6} foi envolvido com um \textit{bounding box}. Para a identificação dos componentes conexos foi considerado a vizinhaça-4.
+Como última figura do passo (7), a Figura~\ref{orb_persp_foto1} apresenta o resultado da imagem panorâmica utilizando o descritor \textit{ORB} para definir os pontos de interesse. Podemos ver algumas falhas em comparação com as desmais imagens panorâmicas, isso se deve ao fato da grande diferença de detecção de pontos de interesse entre o descritor \textit{ORB} e os demais descritores, como será evidenciado a seguir. 
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_10_1.png}
-\caption{Passo (10.1)} \label{step_10_1}
+	\includegraphics[width=7cm]{figures/sift_vis_foto1.jpeg}
+\caption{sift\_vis\_foto1.jpeg} \label{sift_vis_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_10_1} apresenta o resultado da identificação dos componentes conexos e seus \textit{bounding boxex} correspondentes após a execução de 3 iterações da dilatação da imagem da Figura~\ref{bitmap_not} com um elemento estruturante de 1 \textit{pixel} de altura e 3 \textit{pixels} de largura.
+Na Figura~\ref{sift_vis_foto1} podemos ver o resultado do passo (8), o qual é necessário desenhar as retas entre os pontos correspondentes no par de imagens em questão. Podemos destacar que o descritor \textit{SIFT} conseguiu detectar uma grande quantidade de pontos de interesse nas duas imagens e, com isso, obteve um ótimo resultado quando aplicado nessas imagens de entrada. Vale destacar também que, como os pontos de interesse não estão concentrados em uma mesma região, pode-se obter melhores resultados no passo de geração da projeção em perspectiva.
 
 \begin{figure}[H]
 \begin{center}
-	\includegraphics[height=4cm]{figures/step_10_2.png}
-\caption{Passo (10.2)} \label{step_10_2}
+	\includegraphics[width=7cm]{figures/surf_vis_foto1.jpeg}
+\caption{surf\_vis\_foto1.jpeg} \label{surf_vis_foto1}
 \end{center}
 \end{figure}
 
-A Figura~\ref{step_10_2} apresenta o resultado da operação realizada na figura anterior, porém, só foram desenhados os \textit{bounding boxex} dos componentes que foram classificados como texto, de acordo com os resultados obtidos no passo (8.a) e (8.b) e a regra definida anteriormente. Assim, essa figura representa os componentes que foram reconhecidos como palavras.
+A Figura~\ref{surf_vis_foto1} apresenta também o resultado do passo (8), porém, utilizando o descritor \textit{SURF} para obter os pontos de interesse. Assim como na imagem referente ao descritor \textit{SIFT}, essa figura mostra que o descritor \textit{SURF} conseguiu detectar uma grande quantidade de pontos de interesse e em diferentes regiões das imagens. Podemos dizer que esses dois descritores se mostraram equivalentes quando aplicados a essas imagens de entrada.
 
-A contagem do número de linhas e palavras foi realizada da seguinte forma: (i) a contagem de linhas foi realizada com base na imagem da Figura~\ref{step_7} e foram contabilizados somente os componentes que foram classificados como texto; (ii) a contagem de palavras foi realizada com base na imagem da Figura~\ref{step_10_2} e foram contabilizados todos \textit{bounding boxex} que foram classificados como texto.
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/brief_vis_foto1.jpeg}
+\caption{brief\_vis\_foto1.jpeg} \label{brief_vis_foto1}
+\end{center}
+\end{figure}
 
-Como resultado final temos que o número de linhas é 36 e o número de palavras é 305.
+A Figura~\ref{brief_vis_foto1} apresenta o resultado do passo (8) utilizando como descritor o \textit{BRIEF}. Podemos observar que foi detectado uma quantidade bem menor de pontos de interesse, quando comparado ao \textit{SIFT} e \textit{SURF}, porém os pontos de interesse detectados são bem diversificados em regiões da imagem, o que faz com que o resultado seja equivalente aos descritores anteriores.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/orb_vis_foto1.jpeg}
+\caption{orb\_vis\_foto1.jpeg} \label{orb_vis_foto1}
+\end{center}
+\end{figure}
+
+A Figura~\ref{orb_vis_foto1} apresenta o resultado do passo (8), mas utilizando o descritor \textit{ORB} para detectar os pontos de interesse. Podemos observar que foi o descritor que obteve a menor quantidade de pontos de interesse e todos eles em uma mesma região da imagem, o que prejudica quando é necessário fazer a projeção de perspectiva do passo (6). Com isso, podemos ver que o resultado obtido com esse descritor é inferior quando comparado aos demais.
 
 %------------------------------------------------
 
 \section{Conclusão}
 
-Podemos concluir que os resultados obtidos com as aplicações das técnicas de morfologia matemática para a detecção de linhas e palavras foram satisfatórios quanto a especificação do trabalho e que a criação de uma regra para classificação de texto e não texto com base nos cálculos do passo (8.a) e (8.b) se mostrou razoável para este objetivo, assim, consolida ainda mais os conceitos vistos em sala de aula.
+Podemos concluir que os resultados obtidos com as aplicações das técnicas de descrição de imagens e definição dos pontos de interesses nas imagens para a criação da imagem panorâmica e o traçado das retas entre os pontos de interesse foram satisfatórios quanto a especificação do trabalho e se mostrou razoável para este objetivo, assim, consolida ainda mais os conceitos vistos em sala de aula.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -344,14 +371,102 @@ Podemos concluir que os resultados obtidos com as aplicações das técnicas de 
 
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
 
-\bibitem{b1} Welcome to opencv documentation! \href{https://docs.opencv.org/2.4/index.html}{https://docs.opencv.org/2.4/index.html} Acesso em: 04/05/2019.
+\bibitem{b1} Welcome to opencv documentation! \href{https://docs.opencv.org/2.4/index.html}{https://docs.opencv.org/2.4/index.html} Acesso em: 08/06/2019.
 
 \bibitem{b2} Pedrini, Hélio, and William Robson Schwartz. Análise de imagens digitais: princípios, algoritmos e aplicações. Thomson Learning, 2008.
 
-\bibitem{b3} Matplotlib Version 3.0.3 \href{https://matplotlib.org/contents.html}{https://matplotlib.org/contents.html} Acesso em: 04/05/2019.
+\bibitem{b3} Matplotlib Version 3.0.3 \href{https://matplotlib.org/contents.html}{https://matplotlib.org/contents.html} Acesso em: 08/06/2019.
+
+\bibitem{b4} Wikipedia: RANSAC \href{https://pt.wikipedia.org/wiki/RANSAC}{https://pt.wikipedia.org/wiki/RANSAC} Acesso em: 08/06/2019.
  
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
+
+\section*{Anexos}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/sift_persp_inter_foto2.jpeg}
+\caption{sift\_persp\_inter\_foto2.jpeg} \label{sift_persp_inter_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/surf_persp_inter_foto2.jpeg}
+\caption{surf\_persp\_inter\_foto2.jpeg} \label{surf_persp_inter_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/brief_persp_inter_foto2.jpeg}
+\caption{brief\_persp\_inter\_foto2.jpeg} \label{brief_persp_inter_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/orb_persp_inter_foto2.jpeg}
+\caption{orb\_persp\_inter\_foto2.jpeg} \label{orb_persp_inter_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/sift_persp_foto2.jpeg}
+\caption{sift\_persp\_foto2.jpeg} \label{sift_persp_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/surf_persp_foto2.jpeg}
+\caption{surf\_persp\_foto2.jpeg} \label{surf_persp_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/brief_persp_foto2.jpeg}
+\caption{brief\_persp\_foto2.jpeg} \label{brief_persp_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/orb_persp_foto2.jpeg}
+\caption{orb\_persp\_foto2.jpeg} \label{orb_persp_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/sift_vis_foto2.jpeg}
+\caption{sift\_vis\_foto2.jpeg} \label{sift_vis_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/surf_vis_foto2.jpeg}
+\caption{surf\_vis\_foto2.jpeg} \label{surf_vis_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/brief_vis_foto2.jpeg}
+\caption{brief\_vis\_foto2.jpeg} \label{brief_vis_foto2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=7cm]{figures/orb_vis_foto2.jpeg}
+\caption{orb\_vis\_foto2.jpeg} \label{orb_vis_foto2}
+\end{center}
+\end{figure}
 
 \end{document}
