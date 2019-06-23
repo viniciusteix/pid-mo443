@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.13)  8 JUN 2019 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.13)  22 JUN 2019 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -979,298 +979,151 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Underfull \hbox (badness 2809) in paragraph at lines 127--128
-[]\T1/pplx/m/n/10 (+20) aplicar uma pro-je-ção de pers-pec-tiva
- []
-
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 140.
-<figures/foto1A.jpg, id=58, 1027.84pt x 685.56125pt>
-File: figures/foto1A.jpg Graphic file (type jpg)
-<use figures/foto1A.jpg>
-Package pdftex.def Info: figures/foto1A.jpg  used on input line 148.
-(pdftex.def)             Requested size: 153.55768pt x 102.43008pt.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 136.
+<figures/baboon.png, id=42, 30.8352pt x 30.8352pt>
+File: figures/baboon.png Graphic file (type png)
+<use figures/baboon.png>
+Package pdftex.def Info: figures/baboon.png  used on input line 144.
+(pdftex.def)             Requested size: 170.75479pt x 170.71652pt.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 149.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 145.
+<figures/monalisa.png, id=43, 256.96pt x 256.96pt>
+File: figures/monalisa.png Graphic file (type png)
+<use figures/monalisa.png>
+Package pdftex.def Info: figures/monalisa.png  used on input line 151.
+(pdftex.def)             Requested size: 170.7194pt x 170.71652pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-<figures/foto1B.jpg, id=76, 1027.84pt x 685.56125pt>
-File: figures/foto1B.jpg Graphic file (type jpg)
-<use figures/foto1B.jpg>
-Package pdftex.def Info: figures/foto1B.jpg  used on input line 155.
-(pdftex.def)             Requested size: 153.55768pt x 102.43008pt.
-<figures/foto3A.jpg, id=77, 642.4pt x 428.60126pt>
-File: figures/foto3A.jpg Graphic file (type jpg)
-<use figures/foto3A.jpg>
-Package pdftex.def Info: figures/foto3A.jpg  used on input line 162.
-(pdftex.def)             Requested size: 153.5224pt x 102.43008pt.
-<figures/foto3B.jpg, id=78, 642.4pt x 428.60126pt>
-File: figures/foto3B.jpg Graphic file (type jpg)
-<use figures/foto3B.jpg>
-Package pdftex.def Info: figures/foto3B.jpg  used on input line 169.
-(pdftex.def)             Requested size: 153.5224pt x 102.43008pt.
-
-Underfull \hbox (badness 5490) in paragraph at lines 197--198
-[]\T1/pplx/m/n/10 (+20) Para a uti-li-za-ção dos des-cri-to-res pe-
+ <./figures/baboon.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+[]\T1/pplx/m/n/10 (+20) O pro-blema é de-fi-nido for-mal-mente
  []
 
+[2 <./figures/monalisa.png>]
+<figures/baboon_16.png, id=72, 513.92pt x 513.92pt>
+File: figures/baboon_16.png Graphic file (type png)
+<use figures/baboon_16.png>
+Package pdftex.def Info: figures/baboon_16.png  used on input line 216.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
+<figures/monalisa_16.png, id=74, 256.96pt x 256.96pt>
+File: figures/monalisa_16.png Graphic file (type png)
+<use figures/monalisa_16.png>
+Package pdftex.def Info: figures/monalisa_16.png  used on input line 217.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
+<figures/baboon_32.png, id=76, 513.92pt x 513.92pt>
+File: figures/baboon_32.png Graphic file (type png)
+<use figures/baboon_32.png>
+Package pdftex.def Info: figures/baboon_32.png  used on input line 226.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
+<figures/monalisa_32.png, id=77, 256.96pt x 256.96pt>
+File: figures/monalisa_32.png Graphic file (type png)
+<use figures/monalisa_32.png>
+Package pdftex.def Info: figures/monalisa_32.png  used on input line 227.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
-\T1/pplx/m/n/10 (+20) di-dos no tra-ba-lho, fo-ram uti-li-za-das
- []
+Underfull \vbox (badness 3769) has occurred while \output is active []
 
-
-Underfull \hbox (badness 6910) in paragraph at lines 197--198
-\T1/pplx/m/n/10 (+20) as fun-ções do pró-prio \T1/pplx/b/n/10 opencv\T1/pplx/m/
-n/10 (+20) : \T1/pplx/m/it/10 (+20) SIFT
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
-\T1/pplx/b/n/10 cv2.xfeatures2d.SIFT_create()\T1/pplx/m/n/10 (+20) , \T1/pplx/m
-/it/10 (+20) SURF
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
-\T1/pplx/b/n/10 cv2.xfeatures2d.SURF_create()\T1/pplx/m/n/10 (+20) , \T1/pplx/m
-/it/10 (+20) BRIEF
- []
-
-
-Overfull \hbox (17.1577pt too wide) in paragraph at lines 197--198
-\T1/pplx/b/n/10 cv2.xfeatures2d.BriefDescriptorExtractor_create()
- []
-
-
-Underfull \hbox (badness 1092) in paragraph at lines 201--202
-\T1/pplx/m/n/10 (+20) com a téc-nica \T1/pplx/m/it/10 (+20) RAN-SAC \T1/pplx/m/
-n/10 (+20) (\T1/pplx/b/n/10 cv2.RANSAC\T1/pplx/m/n/10 (+20) ) e
- []
-
-[2 <./figures/foto1A.jpg> <./figures/foto1B.jpg> <./figures/foto3A.jpg> <./figu
-res/foto3B.jpg>] [3]
-<figures/sift_persp_inter_foto1.jpeg, id=102, 1480.0896pt x 493.6041pt>
-File: figures/sift_persp_inter_foto1.jpeg Graphic file (type jpg)
-<use figures/sift_persp_inter_foto1.jpeg>
-Package pdftex.def Info: figures/sift_persp_inter_foto1.jpeg  used on input lin
-e 256.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/surf_persp_inter_foto1.jpeg, id=104, 1480.0896pt x 493.6041pt>
-File: figures/surf_persp_inter_foto1.jpeg Graphic file (type jpg)
-<use figures/surf_persp_inter_foto1.jpeg>
-Package pdftex.def Info: figures/surf_persp_inter_foto1.jpeg  used on input lin
-e 265.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/brief_persp_inter_foto1.jpeg, id=106, 1480.0896pt x 493.6041pt>
-File: figures/brief_persp_inter_foto1.jpeg Graphic file (type jpg)
-<use figures/brief_persp_inter_foto1.jpeg>
-Package pdftex.def Info: figures/brief_persp_inter_foto1.jpeg  used on input li
-ne 274.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/orb_persp_inter_foto1.jpeg, id=108, 1480.0896pt x 493.6041pt>
-File: figures/orb_persp_inter_foto1.jpeg Graphic file (type jpg)
-<use figures/orb_persp_inter_foto1.jpeg>
-Package pdftex.def Info: figures/orb_persp_inter_foto1.jpeg  used on input line
- 283.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
- [4 <./figures/sift_persp_inter_foto1.jpeg> <./figures/surf_persp_inter_foto1.j
-peg> <./figures/brief_persp_inter_foto1.jpeg> <./figures/orb_persp_inter_foto1.
-jpeg>]
-<figures/sift_persp_foto1.jpeg, id=118, 1480.0896pt x 493.6041pt>
-File: figures/sift_persp_foto1.jpeg Graphic file (type jpg)
-<use figures/sift_persp_foto1.jpeg>
-Package pdftex.def Info: figures/sift_persp_foto1.jpeg  used on input line 292.
-
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/surf_persp_foto1.jpeg, id=120, 1480.0896pt x 493.6041pt>
-File: figures/surf_persp_foto1.jpeg Graphic file (type jpg)
-<use figures/surf_persp_foto1.jpeg>
-Package pdftex.def Info: figures/surf_persp_foto1.jpeg  used on input line 301.
-
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/brief_persp_foto1.jpeg, id=122, 1480.0896pt x 493.6041pt>
-File: figures/brief_persp_foto1.jpeg Graphic file (type jpg)
-<use figures/brief_persp_foto1.jpeg>
-Package pdftex.def Info: figures/brief_persp_foto1.jpeg  used on input line 310
-.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
+<figures/baboon_64.png, id=79, 513.92pt x 513.92pt>
+File: figures/baboon_64.png Graphic file (type png)
+<use figures/baboon_64.png>
+Package pdftex.def Info: figures/baboon_64.png  used on input line 236.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
+<figures/monalisa_64.png, id=80, 256.96pt x 256.96pt>
+File: figures/monalisa_64.png Graphic file (type png)
+<use figures/monalisa_64.png>
+Package pdftex.def Info: figures/monalisa_64.png  used on input line 237.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
+<figures/baboon_128.png, id=82, 513.92pt x 513.92pt>
+File: figures/baboon_128.png Graphic file (type png)
+<use figures/baboon_128.png>
+Package pdftex.def Info: figures/baboon_128.png  used on input line 246.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
+<figures/monalisa_128.png, id=83, 256.96pt x 256.96pt>
+File: figures/monalisa_128.png Graphic file (type png)
+<use figures/monalisa_128.png>
+Package pdftex.def Info: figures/monalisa_128.png  used on input line 247.
+(pdftex.def)             Requested size: 95.3168pt x 95.3169pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<figures/orb_persp_foto1.jpeg, id=124, 1480.0896pt x 493.6041pt>
-File: figures/orb_persp_foto1.jpeg Graphic file (type jpg)
-<use figures/orb_persp_foto1.jpeg>
-Package pdftex.def Info: figures/orb_persp_foto1.jpeg  used on input line 319.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/sift_vis_foto1.jpeg, id=126, 1480.0896pt x 493.6041pt>
-File: figures/sift_vis_foto1.jpeg Graphic file (type jpg)
-<use figures/sift_vis_foto1.jpeg>
-Package pdftex.def Info: figures/sift_vis_foto1.jpeg  used on input line 328.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
- [5 <./figures/sift_persp_foto1.jpeg> <./figures/surf_persp_foto1.jpeg> <./figu
-res/brief_persp_foto1.jpeg> <./figures/orb_persp_foto1.jpeg> <./figures/sift_vi
-s_foto1.jpeg>]
-<figures/surf_vis_foto1.jpeg, id=137, 1480.0896pt x 493.6041pt>
-File: figures/surf_vis_foto1.jpeg Graphic file (type jpg)
-<use figures/surf_vis_foto1.jpeg>
-Package pdftex.def Info: figures/surf_vis_foto1.jpeg  used on input line 337.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/brief_vis_foto1.jpeg, id=139, 1480.0896pt x 493.6041pt>
-File: figures/brief_vis_foto1.jpeg Graphic file (type jpg)
-<use figures/brief_vis_foto1.jpeg>
-Package pdftex.def Info: figures/brief_vis_foto1.jpeg  used on input line 346.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-<figures/orb_vis_foto1.jpeg, id=141, 1480.0896pt x 493.6041pt>
-File: figures/orb_vis_foto1.jpeg Graphic file (type jpg)
-<use figures/orb_vis_foto1.jpeg>
-Package pdftex.def Info: figures/orb_vis_foto1.jpeg  used on input line 355.
-(pdftex.def)             Requested size: 199.16928pt x 66.41525pt.
-
-Underfull \hbox (badness 6110) in paragraph at lines 374--375
-[]\T1/pplx/m/n/10 (+20) Welcome to opencv do-cu-men-ta-tion!
+ [3 <./figures/baboon_16.png> <./figures/monalisa_16.png> <./figures/baboon_32.
+png> <./figures/monalisa_32.png> <./figures/baboon_64.png> <./figures/monalisa_
+64.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+[]\T1/pplx/m/n/10 (+20) Documentation of scikit-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
-[][]\T1/pplx/m/n/10 (+12) https://docs.opencv.org/2.4/index.html[][]
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+\T1/pplx/m/n/10 (+20) learn. [][]https://scikit-
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
+\T1/pplx/m/n/10 (+20) learn.org/stable/documentation.html[][]
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 266--267
 []\T1/pplx/m/n/10 (+20) Pedrini, Hé-lio, and Wil-liam Rob-son
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 []\T1/pplx/m/n/10 (+20) Matplotlib Ver-sion 3.0.3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 [][]\T1/pplx/m/n/10 (+20) https://matplotlib.org/contents.html[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
-[]\T1/pplx/m/n/10 (+20) Wikipedia: RAN-SAC
+Overfull \hbox (49.97859pt too wide) in paragraph at lines 270--271
+[]\T1/pplx/m/n/10 (-20) Clustering [][]https://pt.wikipedia.org/wiki/Clustering
+[][]
  []
 
-<figures/sift_persp_inter_foto2.jpeg, id=146, 925.056pt x 307.8702pt>
-File: figures/sift_persp_inter_foto2.jpeg Graphic file (type jpg)
-<use figures/sift_persp_inter_foto2.jpeg>
-Package pdftex.def Info: figures/sift_persp_inter_foto2.jpeg  used on input lin
-e 390.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-[6 <./figures/surf_vis_foto1.jpeg> <./figures/brief_vis_foto1.jpeg> <./figures/
-orb_vis_foto1.jpeg>]
-<figures/surf_persp_inter_foto2.jpeg, id=156, 925.056pt x 307.8702pt>
-File: figures/surf_persp_inter_foto2.jpeg Graphic file (type jpg)
-<use figures/surf_persp_inter_foto2.jpeg>
-Package pdftex.def Info: figures/surf_persp_inter_foto2.jpeg  used on input lin
-e 397.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/brief_persp_inter_foto2.jpeg, id=157, 925.056pt x 307.8702pt>
-File: figures/brief_persp_inter_foto2.jpeg Graphic file (type jpg)
-<use figures/brief_persp_inter_foto2.jpeg>
-Package pdftex.def Info: figures/brief_persp_inter_foto2.jpeg  used on input li
-ne 404.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/orb_persp_inter_foto2.jpeg, id=158, 925.056pt x 307.8702pt>
-File: figures/orb_persp_inter_foto2.jpeg Graphic file (type jpg)
-<use figures/orb_persp_inter_foto2.jpeg>
-Package pdftex.def Info: figures/orb_persp_inter_foto2.jpeg  used on input line
- 411.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/sift_persp_foto2.jpeg, id=159, 925.056pt x 307.8702pt>
-File: figures/sift_persp_foto2.jpeg Graphic file (type jpg)
-<use figures/sift_persp_foto2.jpeg>
-Package pdftex.def Info: figures/sift_persp_foto2.jpeg  used on input line 418.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
+[4
 
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<figures/surf_persp_foto2.jpeg, id=160, 925.056pt x 307.8702pt>
-File: figures/surf_persp_foto2.jpeg Graphic file (type jpg)
-<use figures/surf_persp_foto2.jpeg>
-Package pdftex.def Info: figures/surf_persp_foto2.jpeg  used on input line 425.
-
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/brief_persp_foto2.jpeg, id=161, 925.056pt x 307.8702pt>
-File: figures/brief_persp_foto2.jpeg Graphic file (type jpg)
-<use figures/brief_persp_foto2.jpeg>
-Package pdftex.def Info: figures/brief_persp_foto2.jpeg  used on input line 432
-.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/orb_persp_foto2.jpeg, id=162, 925.056pt x 307.8702pt>
-File: figures/orb_persp_foto2.jpeg Graphic file (type jpg)
-<use figures/orb_persp_foto2.jpeg>
-Package pdftex.def Info: figures/orb_persp_foto2.jpeg  used on input line 439.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/sift_vis_foto2.jpeg, id=163, 925.056pt x 307.8702pt>
-File: figures/sift_vis_foto2.jpeg Graphic file (type jpg)
-<use figures/sift_vis_foto2.jpeg>
-Package pdftex.def Info: figures/sift_vis_foto2.jpeg  used on input line 446.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/surf_vis_foto2.jpeg, id=164, 925.056pt x 307.8702pt>
-File: figures/surf_vis_foto2.jpeg Graphic file (type jpg)
-<use figures/surf_vis_foto2.jpeg>
-Package pdftex.def Info: figures/surf_vis_foto2.jpeg  used on input line 453.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
- [7 <./figures/sift_persp_inter_foto2.jpeg> <./figures/surf_persp_inter_foto2.j
-peg> <./figures/brief_persp_inter_foto2.jpeg> <./figures/orb_persp_inter_foto2.
-jpeg> <./figures/sift_persp_foto2.jpeg> <./figures/surf_persp_foto2.jpeg> <./fi
-gures/brief_persp_foto2.jpeg> <./figures/orb_persp_foto2.jpeg> <./figures/sift_
-vis_foto2.jpeg>]
-<figures/brief_vis_foto2.jpeg, id=179, 925.056pt x 307.8702pt>
-File: figures/brief_vis_foto2.jpeg Graphic file (type jpg)
-<use figures/brief_vis_foto2.jpeg>
-Package pdftex.def Info: figures/brief_vis_foto2.jpeg  used on input line 460.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-<figures/orb_vis_foto2.jpeg, id=180, 925.056pt x 307.8702pt>
-File: figures/orb_vis_foto2.jpeg Graphic file (type jpg)
-<use figures/orb_vis_foto2.jpeg>
-Package pdftex.def Info: figures/orb_vis_foto2.jpeg  used on input line 467.
-(pdftex.def)             Requested size: 199.16928pt x 66.28474pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 472.
- [8
-
- <./figures/surf_vis_foto2.jpeg> <./figures/brief_vis_foto2.jpeg> <./figures/or
-b_vis_foto2.jpeg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 472.
+ <./figures/baboon_128.png> <./figures/monalisa_128.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
  (./article_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 472.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 472.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
 Package rerunfilecheck Info: File `article_2.out' has not changed.
-(rerunfilecheck)             Checksum: 1103FB88C3A4E499AC151E027C0B5C20;767.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 472.
+(rerunfilecheck)             Checksum: 51E4576757558BECB75EE605AD289846;528.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
  ) 
 Here is how much of TeX's memory you used:
- 12162 strings out of 492982
- 185605 string characters out of 6134896
- 316256 words of memory out of 5000000
- 15156 multiletter control sequences out of 15000+600000
- 60150 words of font info for 276 fonts, out of 8000000 for 9000
+ 11962 strings out of 492982
+ 181061 string characters out of 6134896
+ 316057 words of memory out of 5000000
+ 15057 multiletter control sequences out of 15000+600000
+ 57559 words of font info for 239 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,11n,43p,790b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,570b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pal
-atino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on article_2.pdf (8 pages, 7118351 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+
+Output written on article_2.pdf (4 pages, 1656599 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 63 named destinations out of 1000 (max. 500000)
- 46325 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 46203 words of extra memory for PDF output out of 51595 (max. 10000000)
 
