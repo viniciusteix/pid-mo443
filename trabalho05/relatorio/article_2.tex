@@ -211,40 +211,40 @@ Nesta seção são apresentados os resultados obtidos após os passos descritos 
 
 A Figura~\ref{quant_16} apresenta o resultado da aplicação da técnica de agrupamento de cores, utilizando 16 \textit{clusters}. Podemos observar que, como a quantidade de cores é muito reduzida, as imagens resultantes contém regiões que se tornaram homogêneas, tendo assim muitas perdas de informações acerca dos detalhes contidos nas imagens.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
-	\includegraphics[height=3.35cm]{figures/baboon_16.png} \quad
-	\includegraphics[height=3.35cm]{figures/monalisa_16.png}
+	\includegraphics[height=6cm]{figures/baboon_16.png}
+	\includegraphics[height=6cm]{figures/monalisa_16.png}
 \caption{Resultado da quantização com 16 cores.} \label{quant_16}
 \end{center}
 \end{figure}
 
 A Figura~\ref{quant_32} apresenta agora o resultado utilizando 32 \textit{clusters}. Podemos observar que, diferente do resultado anterior, agora é possível notar mais detalhes nas imagens e as áreas homogêneas se tornaram bem menores, por conta de estarmos utilizando uma quantidade maior de cores para quantizar as imagens.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
-	\includegraphics[height=3.35cm]{figures/baboon_32.png} \quad
-	\includegraphics[height=3.35cm]{figures/monalisa_32.png}
+	\includegraphics[height=6cm]{figures/baboon_32.png} \quad
+	\includegraphics[height=6cm]{figures/monalisa_32.png}
 \caption{Resultado da quantização com 32 cores.} \label{quant_32}
 \end{center}
 \end{figure}
 
 A Figura~\ref{quant_64} mostra os resultados obtidos utilizando quantização com 64 \textit{clusters}. Agora, já não é possível fazer uma distinção grande para o resultado com 32 \textit{clusters}, pois o olho humano não distingue esse nível de detalhes. Mas podemos perceber que as regiões que estavam homogêneas no resultado anterior não existem mais, assim, o nível de detalhes foi elevado.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
-	\includegraphics[height=3.35cm]{figures/baboon_64.png} \quad
-	\includegraphics[height=3.35cm]{figures/monalisa_64.png}
+	\includegraphics[height=6cm]{figures/baboon_64.png} \quad
+	\includegraphics[height=6cm]{figures/monalisa_64.png}
 \caption{Resultado da quantização com 64 cores.} \label{quant_64}
 \end{center}
 \end{figure}
 
 Por fim, a Figura~\ref{quant_128} apresenta os resultados obtidos utilizando a técnica de agrupamento com 128 \textit{clusters}. Já não é mais possível distinguir diferenças para o resultado anterior (64 \textit{clusters}), o que nos diz que está próximo ou já chegou na quantidade de cores utilizadas na imagem anterior, assim, o agrupamento não altera mais as imagens de entrada.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
-	\includegraphics[height=3.35cm]{figures/baboon_128.png} \quad
-	\includegraphics[height=3.35cm]{figures/monalisa_128.png}
+	\includegraphics[height=6cm]{figures/baboon_128.png} \quad
+	\includegraphics[height=6cm]{figures/monalisa_128.png}
 \caption{Resultado da quantização com 128 cores.} \label{quant_128}
 \end{center}
 \end{figure}
